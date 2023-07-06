@@ -52,6 +52,10 @@
   ```bash
     npm i 
   ```
+  * Create .env file in the server folder, and add a unique value to the SECRET key.
+  ```bash
+    SECRET="value goes here"
+  ```
   * Start the application.
   ```md
     npm start
