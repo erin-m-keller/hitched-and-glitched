@@ -82,10 +82,10 @@
 
   ## The Team Tasks 
 
-  **Adrena Lewis**: // TODO: Add tasks here
-  **Dallen Hatton**: // TODO: Add tasks here 
+  **Adrena Lewis**: // TODO: Add tasks here  
+  **Dallen Hatton**: // TODO: Add tasks here  
   **Hayden Lenca**: // TODO: Add tasks here  
-  **Erin Keller**: // TODO: Add tasks here
+  **Erin Keller**: // TODO: Add tasks here  
   **Samuel Joseph**: // TODO: Add tasks here  
 
   ## Outside Resources
