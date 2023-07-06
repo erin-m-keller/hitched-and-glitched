@@ -36,7 +36,7 @@
   * Ensure you are running Node.js v16.  
   * Clone the repository.
   ```
-    git clone git@github.com:erin-m-keller/keller-book-search.git
+    git clone git@github.com:erin-m-keller/hitched-and-glitched.git
   ```
   * Install the dependencies.
   ```bash
