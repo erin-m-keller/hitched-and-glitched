@@ -18,14 +18,14 @@
 
 ![html](https://img.shields.io/badge/-HTML-61DAFB?color=red&style=flat)
 ![css](https://img.shields.io/badge/-CSS-61DAFB?color=orange&style=flat)
-![javaScript](https://img.shields.io/badge/-JavaScript-61DAFB?color=red&style=flat)
-![expressJS](https://img.shields.io/badge/-Express.js-61DAFB?color=orange&style=flat)
-![nodeJS](https://img.shields.io/badge/-Node.js-61DAFB?color=yellow&style=flat)
-![react](https://img.shields.io/badge/-React-61DAFB?color=green&style=flat)
-![mongodb](https://img.shields.io/badge/-MongoDB-61DAFB?color=blue&style=flat)
-![antd](https://img.shields.io/badge/-AntDesign-61DAFB?color=indigo&style=flat)
-![graphql](https://img.shields.io/badge/-GraphQL-61DAFB?color=violet&style=flat)
-![apollo](https://img.shields.io/badge/-Apollo-61DAFB?color=purple&style=flat)
+![javaScript](https://img.shields.io/badge/-JavaScript-61DAFB?color=yellow&style=flat)
+![expressJS](https://img.shields.io/badge/-Express-61DAFB?color=green&style=flat)
+![nodeJS](https://img.shields.io/badge/-Node-61DAFB?color=blue&style=flat)
+![react](https://img.shields.io/badge/-React-61DAFB?color=purple&style=flat)
+![mongo](https://img.shields.io/badge/-MongoDB-61DAFB?color=indigo&style=flat)
+![antd](https://img.shields.io/badge/-AntDesign-61DAFB?color=violet&style=flat)
+![graphql](https://img.shields.io/badge/-GraphQL-61DAFB?color=red&style=flat)
+![apollo](https://img.shields.io/badge/-Apollo-61DAFB?color=orange&style=flat)
 
   ## User Story
   
