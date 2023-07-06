@@ -75,7 +75,7 @@
 
   [Adrena Lewis](https://github.com/x3n0g3n)  
   [Dallen Hatton](https://github.com/Dhatton01)  
-  [Hayden Lenca](https://github.com/HaydenLenca) 
+  [Hayden Lenca](https://github.com/HaydenLenca)  
   [Erin Keller](https://github.com/erin-m-keller)
 
   // TODO: Add Samuel Joseph
