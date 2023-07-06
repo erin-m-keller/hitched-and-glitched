@@ -66,9 +66,8 @@
   [Adrena Lewis](https://github.com/x3n0g3n)  
   [Dallen Hatton](https://github.com/Dhatton01)  
   [Hayden Lenca](https://github.com/HaydenLenca)  
-  [Erin Keller](https://github.com/erin-m-keller)
-
-  // TODO: Add Samuel Joseph
+  [Erin Keller](https://github.com/erin-m-keller)  
+  [Samuel Joseph](https://github.com/josephash)
 
   ## The Team Tasks 
 
