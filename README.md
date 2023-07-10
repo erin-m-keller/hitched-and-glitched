@@ -1,8 +1,8 @@
   # Hitched & Glitched
   
   ## Description 
-  
-  [mascot](./client/public/robot.png)  
+
+  ![mascot](./client/public/robot.png)  
   
   Hitched & Glitched is a wedding planning website designed to assist couples in organizing and managing their perfect weddings. Built using the MERN stack (MongoDB, Express.js, React.js, and Node.js) along with GraphQL and Apollo, our website offers a modern and efficient solution.
   
