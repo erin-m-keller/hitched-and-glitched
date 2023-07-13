@@ -88,3 +88,10 @@
 	  background-position: 0% 0%;
   }
 }
+
+.inlineBorder {
+  display: flex;
+  border: #ed685f solid 5px;
+  justify-content: center;
+  padding-top: 15px;
+}
