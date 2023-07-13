@@ -24,10 +24,9 @@
   --rich-black: #0F1020;
   --dark-green: #042A2B;
 }
-
 .hero {
 	margin: 0;
-	padding: 0;
+	padding: 1em;
 	font-family: Arial, sans-serif;
 	overflow: auto;
 	background: linear-gradient(
@@ -41,19 +40,43 @@
 	background-size: 400% 400%;
 	background-attachment: fixed;
   color: #FFF;
-  }
-
+}
 .main-content {
   display: block;
   width: 100%;
   height: 100%;
   padding: 1em;
 }
-
 .unclickable-item {
   pointer-events: none;
   cursor: default;
   color: var(--salmon);
+}
+.hg-menu {
+  position: relative;
+}
+.login-logout,
+.drawer-icon {
+  position: absolute;
+  top: 0;
+  right: 1em;
+  color: #FFF;
+  cursor: pointer;
+}
+.hide-mobile {
+  display: none;
+}
+.hide-desktop {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .hide-mobile {
+    display: block;
+  }
+  .hide-desktop {
+    display: none;
+  }
 }
 
 /************************************************
