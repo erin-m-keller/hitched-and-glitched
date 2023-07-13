@@ -50,6 +50,14 @@ const AppNavbar = () => {
               </Link>
             </Item>
           )}
+          {Auth.loggedIn() && (
+            <Item key="5">
+            <Link to="/budget" className="navigation-link">
+              <FontAwesomeIcon icon={faTachometerAlt} />
+              Budget
+            </Link>
+          </Item>
+          )}
           {Auth.loggedIn() ? (
             <Item key="4">
               <div className="navigation-link" onClick={Auth.logout}>

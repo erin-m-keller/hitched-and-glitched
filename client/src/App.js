@@ -5,6 +5,7 @@ import { persistCache } from 'apollo-cache-persist';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Navbar from './components/Navbar';
+import Budget from './pages/Budget';
 
 const cache = new InMemoryCache();
 async function persistApolloCache() {
@@ -34,6 +35,7 @@ function App() {
             <Navbar />
             <Switch>
               <Route exact path='/' component={Home} />
+              <Route exact path='/budget' component={Budget} />
               <Route exact path='/dashboard' component={Dashboard} />
               <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
             </Switch>
