@@ -1,22 +1,45 @@
-import React from "react"; 
+import React, { useState } from "react"; 
+import { AppContext } from '../../context/AppContext';
+import { useContext } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 const AddExpense = () => {
+    const { dispatch } = useContext(AppContext);
+
+    const [name, setName] = useState('');
+    const [cost, setCost] = useState('');
+
+    const onSubmit = (event) => {
+        event.preventDefault();
+
+		const expense = {
+			id: uuidv4(),
+			name: name,
+			cost: parseInt(cost),
+		};
+
+		dispatch({
+			type: 'ADD_EXPENSE',
+			payload: expense,
+		});
+    };
+
     return (
-        <form> 
-            <div>
-                <div> 
-                    <label>Name</label>
-                    <input required='required' type='text' id='name'></input>
+        <form onSubmit={onSubmit}> 
+            <div className='row'>
+                <div className='col-sm'> 
+                    <label for='name'>Name</label>
+                    <input required='required' type='text' className='form-control' id='name' value={name} onChange={(event) => setName(event.target.value)}></input>
                 </div>
                 <div> 
-                    <label>Cost</label>
-                    <input required='required' type='text' id='cost'></input>
+                    <label for='cost'>Cost</label>
+                    <input required='required' type='text' className='form-control' id='cost' value={cost} onChange={(event) => setCost(event.target.value)}></input>
                 </div>
             </div>
             
-            <div>
-                <div>
-                    <button>
+            <div className='row'>
+                <div className='col-sm'>
+                    <button type='submit' className='btn btn-primary mt-3'>
                        Add to Budget 
                     </button>
                 </div>
