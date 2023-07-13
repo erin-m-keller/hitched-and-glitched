@@ -4,6 +4,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { persistCache } from 'apollo-cache-persist';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
+import Vendors from './pages/Vendors';
 import Navbar from './components/Navbar';
 
 const cache = new InMemoryCache();
@@ -35,6 +36,7 @@ function App() {
             <Switch>
               <Route exact path='/' component={Home} />
               <Route exact path='/dashboard' component={Dashboard} />
+              <Route exact path='/vendors' component={Vendors} />
               <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
             </Switch>
           </>
