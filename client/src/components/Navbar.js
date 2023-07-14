@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import LoginForm from './LoginForm';
 import SignUpForm from './SignupForm';
 import Auth from '../utils/auth';
@@ -12,6 +12,7 @@ const AppNavbar = () => {
   const [open, setOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('login');
   const [isDrawerVisible, setDrawerVisible] = useState(false);
+  const location = useLocation();
 
   const handleOpen = () => {
     setOpen(true);
@@ -33,6 +34,10 @@ const AppNavbar = () => {
     setDrawerVisible(false);
   };
 
+  const isMenuItemActive = (key) => {
+    return location.pathname === key;
+  };
+
   const menuItems = [
       {
         key: "1",
@@ -43,17 +48,20 @@ const AppNavbar = () => {
       {
         key: "/",
         icon: <FontAwesomeIcon icon={faHouse} />,
-        label: <Link to="/" className="navigation-link">Home</Link>
+        label: <Link to="/" className="navigation-link">Home</Link>,
+        className: isMenuItemActive("/") ? 'active' : 'inactive'
       },
       {
         key: "/dashboard",
         icon: <FontAwesomeIcon icon={faTachometerAlt} />,
-        label: <Link to="/dashboard" className="navigation-link">Dashboard</Link>
+        label: <Link to="/dashboard" className="navigation-link">Dashboard</Link>,
+        className: isMenuItemActive("/dashboard") ? 'active' : 'inactive'
       },
       {
         key: "/inspiration",
         icon: <FontAwesomeIcon icon={faLightbulb} />,
-        label: <Link to="/inspiration" className="navigation-link">Inspiration</Link>
+        label: <Link to="/inspiration" className="navigation-link">Inspiration</Link>,
+        className: isMenuItemActive("/inspiration") ? 'active' : 'inactive'
       },
       ...(Auth.loggedIn()
       ? [
