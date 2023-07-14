@@ -7,6 +7,21 @@ const typeDefs = gql`
     _id: ID!
     username: String!
     email: String!
+    savedInspirations: [Inspiration]!
+  }
+  type Inspiration {
+    id: String!
+    likes: Int!
+    backgroundImage: String!
+    alt_description: String!
+    raw: String!
+  }
+  input NewInspirationInput {
+    id: String!
+    likes: Int!
+    backgroundImage: String!
+    alt_description: String!
+    raw: String!
   }
   input CreateUserInput {
     username: String!
@@ -18,11 +33,13 @@ const typeDefs = gql`
     user: User!
   }  
   type Query {
-    hello: String # Placeholder query
+    getUser: User
   }
   type Mutation {
     createUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addInspiration(inspirationData: NewInspirationInput!): User!
+    removeInspiration(inspirationId: String!): User!
   }
 `;
 
