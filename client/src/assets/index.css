@@ -181,6 +181,9 @@ p,
 .ant-menu li.active {
   background-color: var(--salmon);
 }
+.ant-menu li.inactive {
+  background-color: var(--dark-green) !important;
+}
 :where(.css-dev-only-do-not-override-14wwjjs).ant-layout-header {
   padding-inline: 0;
 }

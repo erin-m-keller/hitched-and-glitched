@@ -6,7 +6,6 @@ import Auth from '../utils/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket, faBell, faHouse, faTachometerAlt, faBars } from '@fortawesome/free-solid-svg-icons';
 import { Layout, Drawer, Menu, Modal, Tabs, Card } from 'antd';
-
 const { Header } = Layout;
 
 const AppNavbar = () => {
@@ -40,58 +39,56 @@ const AppNavbar = () => {
   };
 
   const menuItems = [
-    {
-      key: "1",
-      className: "unclickable-item",
-      icon: <FontAwesomeIcon icon={faBell} />,
-      label: "Hitched & Glitched"
-    },
-    {
-      key: "/",
-      icon: <FontAwesomeIcon icon={faHouse} />,
-      label: <Link to="/" className="navigation-link">Home</Link>
-    },
-    {
-      key: "/dashboard",
-      icon: <FontAwesomeIcon icon={faTachometerAlt} />,
-      label: <Link to="/dashboard" className="navigation-link">Dashboard</Link>
-    },
-    {
-      key: "/inspiration",
-      icon: <FontAwesomeIcon icon={faTachometerAlt} />,
-      label: <Link to="/inspiration" className="navigation-link">Inspiration</Link>
-    },
-    ...(Auth.loggedIn()
+      {
+        key: "1",
+        className: "unclickable-item",
+        icon: <FontAwesomeIcon icon={faBell} />,
+        label:"Hitched & Glitched"
+      },
+      {
+        key: "/",
+        icon: <FontAwesomeIcon icon={faHouse} />,
+        label: <Link to="/" className="navigation-link">Home</Link>,
+        className: isMenuItemActive("/") ? 'active' : 'inactive'
+      },
+      {
+        key: "/dashboard",
+        icon: <FontAwesomeIcon icon={faTachometerAlt} />,
+        label: <Link to="/dashboard" className="navigation-link">Dashboard</Link>,
+        className: isMenuItemActive("/dashboard") ? 'active' : 'inactive'
+      },
+      {
+        key: "/inspiration",
+        icon: <FontAwesomeIcon icon={faTachometerAlt} />,
+        label: <Link to="/inspiration" className="navigation-link">Inspiration</Link>,
+        className: isMenuItemActive("/inspiration") ? 'active' : 'inactive'
+      },
+      ...(Auth.loggedIn()
       ? [
-        {
-          key: '/logout',
-          icon: <FontAwesomeIcon icon={faRightFromBracket} />,
-          label: 'Logout',
-          onClick: Auth.logout,
-        },
-      ]
+          {
+            key: '/logout',
+            icon: <FontAwesomeIcon icon={faRightFromBracket} />,
+            label: 'Logout',
+            onClick: Auth.logout,
+          },
+        ]
       : [
-        {
-          key: '/login',
-          icon: <FontAwesomeIcon icon={faRightFromBracket} />,
-          label: 'Login/Sign Up',
-          onClick: handleOpen,
-        },
-      ]),
+          {
+            key: '/login',
+            icon: <FontAwesomeIcon icon={faRightFromBracket} />,
+            label: 'Login/Sign Up',
+            onClick: handleOpen,
+          },
+        ]),
   ];
-
+    
+  //<Menu items={menuItems} />
+  
   return (
     <>
       <Header className="app-header">
         <div className="hg-menu">
-          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['/']} selectedKeys={[location.pathname]} className="hide-mobile">
-            {menuItems.map((item) => (
-              <Menu.Item key={item.key} className={isMenuItemActive(item.key) ? 'active' : ''}>
-                {item.icon}
-                {item.label}
-              </Menu.Item>
-            ))}
-          </Menu>
+          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['/']} items={menuItems} className="hide-mobile" />
           <div className="drawer-icon hide-desktop" onClick={showDrawer}>
             <FontAwesomeIcon icon={faBars} />
           </div>
@@ -111,14 +108,7 @@ const AppNavbar = () => {
           </Tabs>
         </Modal>
         <Drawer placement="right" open={isDrawerVisible} onClose={closeDrawer}>
-          <Menu mode="vertical" defaultSelectedKeys={['/']} selectedKeys={[location.pathname]}>
-            {menuItems.map((item) => (
-              <Menu.Item key={item.key} className={isMenuItemActive(item.key) ? 'active' : ''}>
-                {item.icon}
-                {item.label}
-              </Menu.Item>
-            ))}
-          </Menu>
+          <Menu mode="vertical" defaultSelectedKeys={['/']} items={menuItems} />
         </Drawer>
       </Header>
     </>
