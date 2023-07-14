@@ -53,7 +53,7 @@ export const AppProvider = (props) => {
 	return (
 		<AppContext.Provider
 			value={{
-				budget: state.starting,
+				budget: state.budget,
 				expenses: state.expenses,
 				dispatch,
 			}}
