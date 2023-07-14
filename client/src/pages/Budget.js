@@ -11,7 +11,7 @@ const Budget = () => {
     return (
       <AppProvider>
       {/* starting budget */}
-      <div className='container'>
+      <div className='container budget'>
         <div className="inlineBorder">
           <h1>Budget Board</h1>
           <div className='col-sm'>
@@ -27,7 +27,7 @@ const Budget = () => {
 
 {/* expenses added to the budget */}
         <h2>Expenses</h2>
-        <div key={2}>
+        <div>
           <div>
             <ExpenseList />
           </div>
