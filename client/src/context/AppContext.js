@@ -8,6 +8,13 @@ const AppReducer = (state, action) => {
 				...state,
 				expenses: [...state.expenses, action.payload],
 			};
+		case 'DELETE_EXPENSE':
+			return {
+				...state, 
+				expenses: state.expenses.filter((expenses) => 
+				expenses.id !==action.payload 
+				),
+			};
 
 			case 'SET_BUDGET':
 				return {
