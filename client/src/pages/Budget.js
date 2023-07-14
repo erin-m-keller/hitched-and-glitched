@@ -27,7 +27,7 @@ const Budget = () => {
 
 {/* expenses added to the budget */}
         <h2>Expenses</h2>
-        <div>
+        <div key={2}>
           <div>
             <ExpenseList />
           </div>
