@@ -8,6 +8,13 @@ const AppReducer = (state, action) => {
 				...state,
 				expenses: [...state.expenses, action.payload],
 			};
+
+			case 'SET_BUDGET':
+				return {
+					...state,
+					budget: action.payload,
+				};
+
 		default:
 			return state;
 	}

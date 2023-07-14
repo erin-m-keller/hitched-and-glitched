@@ -1,10 +1,15 @@
-import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
 
 const Spent = () => {
+    const { expenses } = useContext(AppContext);
+    const totalExpenses = expenses.reduce((total, item) => {
+        return (total += item.cost);
+    },0);
+
     return (
         <div className="main-content">
-            <span>Spent: $10,000</span>
+            <span>Spent: ${ totalExpenses }</span>
         </div>
     );
 };

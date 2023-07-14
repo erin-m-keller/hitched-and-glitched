@@ -55,6 +55,11 @@ const AppNavbar = () => {
         icon: <FontAwesomeIcon icon={faTachometerAlt} />,
         label: <Link to="/inspiration" className="navigation-link">Inspiration</Link>
       },
+      {
+        key: "/budget",
+        icon: <FontAwesomeIcon icon={faTachometerAlt} />,
+        label: <Link to="/budget" className="navigation-link">Budget</Link>
+      },
       ...(Auth.loggedIn()
       ? [
           {
