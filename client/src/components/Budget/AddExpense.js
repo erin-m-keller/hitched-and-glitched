@@ -28,11 +28,11 @@ const AddExpense = () => {
         <form onSubmit={onSubmit}> 
             <div className='row'>
                 <div className='col-sm'> 
-                    <label for='name'>Name</label>
+                    <label htmlFor='name'>Name</label>
                     <input required='required' type='text' className='form-control' id='name' value={name} onChange={(event) => setName(event.target.value)}></input>
                 </div>
                 <div> 
-                    <label for='cost'>Cost</label>
+                    <label htmlFor='cost'>Cost</label>
                     <input required='required' type='text' className='form-control' id='cost' value={cost} onChange={(event) => setCost(event.target.value)}></input>
                 </div>
             </div>
