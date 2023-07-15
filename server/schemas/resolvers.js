@@ -44,7 +44,6 @@ const resolvers = {
     addInspiration: async (_, { inspirationData }, context) => {
       // if no user object, throw authentication error
       if (!context.user) throw new Error('Not authenticated.');
-      console.log("context.user._id: ", context.user._id);
       // find user by id
       // push the inspiration to the savedInspirations array
       // new: true returns the updated object
