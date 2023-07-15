@@ -44,6 +44,8 @@ const Inspiration = () => {
   const handleSaveInspiration = async (inspirationId) => {
     const inspirationToSave = searchedInspiration.find((inspiration) => inspiration.id === inspirationId),
           token = Auth.loggedIn() ? Auth.getToken() : null;
+    console.log("token: ", token);
+    console.log("inspirationToSave: ", inspirationToSave);
     if (!token) return false;
     try {
       const inspirationData = {
@@ -53,10 +55,12 @@ const Inspiration = () => {
         alt_description: inspirationToSave.alt_description,
         raw: inspirationToSave.urls.raw
       };
+      console.log("inspirationData: ", inspirationData);
       const { data } = await addInspiration({ 
         variables: { inspirationData },
         context: headers, 
       });
+      console.log(data);
       if (!data) throw new Error('something went wrong!'); 
        setInspirationList([...inspirationList, inspirationToSave.id]);
        openNotification('topRight');

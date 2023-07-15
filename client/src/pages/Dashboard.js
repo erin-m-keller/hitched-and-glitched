@@ -25,8 +25,11 @@ const Dashboard = () => {
   cache = apolloClient.cache,
   [api, contextHolder] = notification.useNotification();
 
+  console.log("email: ", email);
+
   useEffect(() => {
     refetch();
+    console.log(JSON.stringify(data));
     if (data) {
       setUserData(data.getUser);
     }
