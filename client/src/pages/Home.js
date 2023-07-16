@@ -11,7 +11,7 @@ const Home = () => {
       <div className="hero">
         <h1 className="text-gradient logo">Hitched & G-G-G-Glitched</h1>
         <h2 className="text-gradient sublogo">Calm your motherboard!</h2>
-        <img src="robot.png" width="200px"></img>
+        <img src="robot.png" width="200px" alt='robot'></img>
         <p className="text-gradient description"> My name is B-B-Belle. I have been imported here to help you not stress about the HOPEfully happiest day of your life. This site holds many g-goodies to help you organize and navigate your thoughts so you dont b-b-burn your circuits</p>
       </div>
       <div className="flex-container">

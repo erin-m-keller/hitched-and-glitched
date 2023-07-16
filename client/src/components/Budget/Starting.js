@@ -26,7 +26,7 @@ const Starting = () => {
 
     // should handle switch from edit to save 
     return (
-        <div class='alert alert-secondary p-3 d-flex align-items-center justify-content-between'>
+        <div className='alert alert-secondary p-3 d-flex align-items-center justify-content-between'>
             {isEditing ? (
                 // editbudget file
                 <EditBudget handleSaveClick={handleSaveClick} budget={budget} />

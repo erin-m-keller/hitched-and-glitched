@@ -11,15 +11,20 @@ const Budget = () => {
     return (
       <AppProvider>
       {/* starting budget */}
+      {/* bootstrap  container budget*/}
       <div className='container budget'>
-        <div className="inlineBorder">
+        {/* bootstrap  "inlineBorder"*/}
+        <div className='inlineBorder'>
           <h1>Budget Board</h1>
+          {/* bootstrap  'col-sm'*/}
           <div className='col-sm'>
             <Starting />
           </div>
+          {/* bootstrap  'col-sm'*/}
           <div className='col-sm'>
             <Spent />
           </div>
+          {/* bootstrap  'col-sm'*/}
           <div className='col-sm'>
             <Remaining />
           </div>
@@ -35,6 +40,7 @@ const Budget = () => {
 
 {/* form to add expenses */}
         <h3>Add Expenses</h3>
+        {/* bootstrap  'col-sm'*/}
         <div className='col-sm'>
           <AddExpense />
         </div>
