@@ -4,7 +4,7 @@ import LoginForm from './LoginForm';
 import SignUpForm from './SignupForm';
 import Auth from '../utils/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRightFromBracket, faBell, faHouse, faTachometerAlt, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faRightFromBracket, faBell, faHouse, faTachometerAlt, faBars, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { Layout, Drawer, Menu, Modal, Tabs, Card } from 'antd';
 const { Header } = Layout;
 
@@ -59,7 +59,7 @@ const AppNavbar = () => {
       },
       {
         key: "/inspiration",
-        icon: <FontAwesomeIcon icon={faTachometerAlt} />,
+        icon: <FontAwesomeIcon icon={faLightbulb} />,
         label: <Link to="/inspiration" className="navigation-link">Inspiration</Link>,
         className: isMenuItemActive("/inspiration") ? 'active' : 'inactive'
       },
