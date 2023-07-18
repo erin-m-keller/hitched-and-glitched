@@ -8,8 +8,8 @@ const Spent = () => {
     },0);
 
     return (
-        <div className='alert alert-primary p-3'>
-            <span>Spent: ${ totalExpenses }</span>
+        <div className='spent'>
+            <span className='spentDisplay'>Spent: ${ totalExpenses }</span>
         </div>
     );
 };

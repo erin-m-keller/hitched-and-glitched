@@ -6,11 +6,11 @@ const ExpenseList = () => {
     const { expenses } = useContext(AppContext);
  
     return (
-        <ul>
+          <ul>
             {expenses.map((expense) => (
                 <ExpenseItem key={expense.id} id={expense.id} name={expense.name} cost={expense.cost} />              
             ))}
-        </ul>
+        </ul>  
     );
 };
 

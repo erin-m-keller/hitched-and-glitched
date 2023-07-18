@@ -1,5 +1,6 @@
 import { AppContext } from "../../context/AppContext";
 import React, { useContext } from "react";
+import { Button } from 'antd';
 
 const ExpenseItem = (props) => {
 
@@ -12,16 +13,21 @@ const ExpenseItem = (props) => {
 	};
 
     return (
-        <li className='list-group-item d-flex justify-content-between align-items-center'>
-            {props.name}
-            <div>
+        <li className='border aliceBlue'>
+            <div className="listName">
+            <span>
+                {props.name}
+            </span>
+            </div>
+            <div className="listPrice">
                 <span>
                     ${props.cost}
                 </span>
-                <button type='button' onClick={handleDeleteExpense}>Delete</button>
+                <Button type='primary' danger ghost onClick={handleDeleteExpense}>Delete</Button>
             </div>
         </li>
     );
 };
+
 
 export default ExpenseItem;

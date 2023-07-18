@@ -3,6 +3,7 @@ import ViewBudget from "./ViewBudget";
 import EditBudget from "./EditBudget";
 import { AppContext } from "../../context/AppContext";
 
+
 // code is not saving value entered
 // code is not saving value entered
 // code is not saving value entered
@@ -26,7 +27,7 @@ const Starting = () => {
 
     // should handle switch from edit to save 
     return (
-        <div className='alert alert-secondary p-3 d-flex align-items-center justify-content-between'>
+        <div className=''>
             {isEditing ? (
                 // editbudget file
                 <EditBudget handleSaveClick={handleSaveClick} budget={budget} />

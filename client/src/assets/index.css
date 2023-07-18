@@ -224,8 +224,79 @@ p,
 
 .inlineBorder {
   display: flex;
-  border: #ed685f solid 5px;
   justify-content: center;
   padding-top: 15px;
 }
 
+.border {
+  border: rgb(0, 121, 6) solid 2px;
+  margin:  5px 40px 5px 5px;
+}
+
+.budgetDisplay {
+  border: black solid 3px;
+  padding: 8px 1px 10px 8px;
+  border-radius: 8px;
+}
+
+.spentDisplay {
+  border: black solid 3px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.spent {
+  margin-top: 8px;
+}
+
+.listName {
+  padding-top: 20px;
+  position: center;
+  
+}
+
+ .listPrice {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+  /* padding-left: 85%; */
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.margin {
+  margin: 0% 3% 0% 3%;
+}
+
+.marginTop {
+  margin: 0% 3% 0% 0%;
+}
+
+.footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 0 0 0;
+  background-color: #FE7B72;
+  }
+
+  .darkGreen {
+    background-color: #042A2B;
+  }
+
+  .aliceBlue {
+    background-color: #E3F2FD;
+  }
+
+  .aliceBlueText {
+    color: #E3F2FD;
+  }
+
+  .salmonText {
+    color: #FE7B72;
+  }
+
+  

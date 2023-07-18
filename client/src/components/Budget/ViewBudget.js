@@ -1,12 +1,15 @@
 import React from 'react';
+import { Button } from 'antd';
+
 
 const ViewBudget = (props) => {
 	return (
 		<>
-			<span>Budget: ${props.budget}</span>
-			<button type='button' onClick={props.handleEditClick}>
+			<span className='budgetDisplay'>Budget: ${props.budget}
+			<Button className='aliceBlueText' type='text' onClick={props.handleEditClick}>
 				Edit
-			</button>
+			</Button>
+			</span>
 		</>
 	);
 };

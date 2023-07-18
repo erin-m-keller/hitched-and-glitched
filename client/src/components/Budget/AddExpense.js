@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { AppContext } from '../../context/AppContext';
 import { useContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { Button, Input } from 'antd';
 
 const AddExpense = () => {
     const { dispatch } = useContext(AppContext);
@@ -26,20 +27,21 @@ const AddExpense = () => {
 
     return (
         <form onSubmit={onSubmit}> 
-            <div className='row'>
-                <div className='col-sm'> 
+            <div>
+                <div> 
                     <label htmlFor='name'>Name</label>
-                    <input required='required' type='text' className='form-control' id='name' value={name} onChange={(event) => setName(event.target.value)}></input>
+                    <Input required='required' type='text' id='name' value={name} onChange={(event) => setName(event.target.value)}></Input>
                 </div>
                 <div> 
                     <label htmlFor='cost'>Cost</label>
-                    <input required='required' type='text' className='form-control' id='cost' value={cost} onChange={(event) => setCost(event.target.value)}></input>
+                    <Input required='required' type='text' id='cost' value={cost} onChange={(event) => setCost(event.target.value)}></Input>
                 </div>
             </div>
-            
-            <div className='row'>
-                <div className='col-sm'>
-                    <button type='submit' className='btn btn-primary mt-3'>
+              
+            <div>
+                <div className="center">
+                    {/* adding the capital Button will not add item */}
+                    <button type='default'>
                        Add to Budget 
                     </button>
                 </div>

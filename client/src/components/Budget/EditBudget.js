@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
+import { Button, Input } from 'antd';
 
 const EditBudget = (props) => {
 	const [value, setValue] = useState(props.budget);
 	return (
 		<>
-			<input required='required' type='number' className='form-control mr-3' id='name' value={value}
+			<Input required='required' type='number' className='' id='name' value={value}
 				onChange={(event) => setValue(event.target.value)}
 			/>
-			<button type='submit' className='btn btn-primary'
+			<Button type='default' className=''
 				onClick={() => props.handleSaveClick(value)}
 			>
 				Save
-			</button>
+			</Button>
 		</>
 	);
 };

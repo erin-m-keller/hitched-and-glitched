@@ -1,5 +1,5 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import Starting from '../components/Budget/Starting';
 import Spent from '../components/Budget/Spent';
 import Remaining from '../components/Budget/Remaining';
@@ -12,26 +12,26 @@ const Budget = () => {
       <AppProvider>
       {/* starting budget */}
       {/* bootstrap  container budget*/}
-      <div className='container budget'>
+      <div className='darkGreen'>
         {/* bootstrap  "inlineBorder"*/}
-        <div className='inlineBorder'>
-          <h1>Budget Board</h1>
+        <div className='hero inlineBorder '>
+          <h1 className='marginTop'>Budget Board</h1>
           {/* bootstrap  'col-sm'*/}
-          <div className='col-sm'>
+          <div>
             <Starting />
           </div>
           {/* bootstrap  'col-sm'*/}
-          <div className='col-sm'>
+          <div className='margin'>
             <Spent />
           </div>
           {/* bootstrap  'col-sm'*/}
-          <div className='col-sm'>
+          <div>
             <Remaining />
           </div>
         </div>
 
 {/* expenses added to the budget */}
-        <h2>Expenses</h2>
+        <h2 className='center salmonText'>Expenses</h2>
         <div>
           <div>
             <ExpenseList />
@@ -39,12 +39,13 @@ const Budget = () => {
         </div>
 
 {/* form to add expenses */}
-        <h3>Add Expenses</h3>
+        <div  className="footer">
+        <h3 className="center">Add Expenses</h3>
         {/* bootstrap  'col-sm'*/}
-        <div className='col-sm'>
+        <div>
           <AddExpense />
         </div>
-        
+        </div>
 
       </div>  
       </AppProvider>
