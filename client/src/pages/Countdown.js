@@ -16,3 +16,17 @@ function CountdownPage() {
   return d.toISOString().slice(0, 10) === dateString;
 }
   
+ // Function to initiate the countdown
+ function startCountdown() {
+  if (!isValidDate(targetDate)) {
+    console.log("Invalid date format. Please try again.");
+    return;
+  }
+
+  var today = new Date().getTime();
+  var target = new Date(targetDate).getTime();
+
+  if (today > target) {
+    console.log("Invalid date. The target date has already passed.");
+    return;
+  }
