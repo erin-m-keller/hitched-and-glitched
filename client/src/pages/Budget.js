@@ -14,7 +14,7 @@ const Budget = () => {
       {/* bootstrap  container budget*/}
       <div className='darkGreen'>
         {/* bootstrap  "inlineBorder"*/}
-        <div className='hero inlineBorder '>
+        <div className='hero budgetSection'>
           <h1 className='marginTop'>Budget Board</h1>
           {/* bootstrap  'col-sm'*/}
           <div>

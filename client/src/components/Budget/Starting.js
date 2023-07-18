@@ -3,11 +3,6 @@ import ViewBudget from "./ViewBudget";
 import EditBudget from "./EditBudget";
 import { AppContext } from "../../context/AppContext";
 
-
-// code is not saving value entered
-// code is not saving value entered
-// code is not saving value entered
-
 const Starting = () => {
     const { budget, dispatch } = useContext(AppContext);
     const [isEditing, setIsEditing] = useState(false);
@@ -36,9 +31,6 @@ const Starting = () => {
                 <ViewBudget handleEditClick={handleEditClick} budget={budget} />
             )}
         </div>
-        // <div className="main-content">
-        //     <span>Starting Budget: ${budget}</span>
-        // </div>
     );
 };
 

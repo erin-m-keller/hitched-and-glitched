@@ -40,7 +40,7 @@ const AddExpense = () => {
               
             <div>
                 <div className="center">
-                    {/* adding the capital Button will not add item */}
+                    {/* adding the capital Button will not add item to page*/}
                     <button type='default'>
                        Add to Budget 
                     </button>

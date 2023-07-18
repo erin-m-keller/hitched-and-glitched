@@ -276,10 +276,10 @@ p,
   }
 }
 
-.inlineBorder {
+.budgetSection {
   display: flex;
   justify-content: center;
-  padding-top: 15px;
+  padding: 55px 15px 55px 15px;
 }
 
 .border {
