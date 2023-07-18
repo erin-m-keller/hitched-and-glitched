@@ -42,8 +42,9 @@ function App() {
           <Switch>
             {/* Route for the Home page */}
             <Route exact path='/' component={Home} />
+            {/* Route for the Budget page */}
+            <Route exact path='/budget' component={Budget} />
             {/* Route for the Dashboard page */}
-              <Route exact path='/budget' component={Budget} />
             <Route exact path='/dashboard' component={Dashboard} />
             {/* Route for the Inspiration page */}
             <Route exact path='/inspiration' component={Inspiration} />
