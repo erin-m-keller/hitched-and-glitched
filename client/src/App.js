@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-import { persistCache } from 'apollo-cache-persist';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Inspiration from './pages/Inspiration';
@@ -9,13 +8,7 @@ import Navbar from './components/Navbar';
 import Budget from './pages/Budget';
 
 const cache = new InMemoryCache();
-async function persistApolloCache() {
-  await persistCache({
-    cache,                            
-    storage: window.localStorage,   
-  });
-}
-persistApolloCache();
+
 const client = new ApolloClient({
   request: operation => {
     const token = localStorage.getItem('jwtToken');
