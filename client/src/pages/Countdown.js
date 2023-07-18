@@ -30,3 +30,17 @@ function CountdownPage() {
     console.log("Invalid date. The target date has already passed.");
     return;
   }
+
+  // Start the countdown
+  var countdownInterval = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = target - now;
+
+    if (distance <= 0) {
+      clearInterval(countdownInterval);
+      setCountdownCompleted(true);
+    }
+  }, 1000);
+}
+
+useEffect(() => {
