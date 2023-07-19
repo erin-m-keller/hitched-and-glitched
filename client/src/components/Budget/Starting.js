@@ -22,7 +22,7 @@ const Starting = () => {
 
     // should handle switch from edit to save 
     return (
-        <div className=''>
+        <div>
             {isEditing ? (
                 // editbudget file
                 <EditBudget handleSaveClick={handleSaveClick} budget={budget} />

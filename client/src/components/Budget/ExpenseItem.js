@@ -1,5 +1,5 @@
 import { AppContext } from "../../context/AppContext";
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Button } from 'antd';
 
 const ExpenseItem = (props) => {
@@ -12,6 +12,17 @@ const ExpenseItem = (props) => {
 		});
 	};
 
+    // const storedExpenses = JSON.parse(localStorage.getItem('expense'))
+    
+
+    // const [expenses, setExpense] = useState([]); 
+
+    // useEffect(() => {
+    //     localStorage.setItem('expense', JSON.stringify(props))
+    // }, [expenses]);
+
+//    let expenseData = localStorage.getItem(expenses);
+    
     return (
         <li className='border aliceBlue'>
             <div className="listName">
