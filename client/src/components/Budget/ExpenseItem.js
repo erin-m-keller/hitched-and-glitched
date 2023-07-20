@@ -11,17 +11,6 @@ const ExpenseItem = (props) => {
 			payload: props.id,
 		});
 	};
-
-    // const storedExpenses = JSON.parse(localStorage.getItem('expense'))
-    
-
-    // const [expenses, setExpense] = useState([]); 
-
-    // useEffect(() => {
-    //     localStorage.setItem('expense', JSON.stringify(props))
-    // }, [expenses]);
-
-//    let expenseData = localStorage.getItem(expenses);
     
     return (
         <li className='border aliceBlue'>
