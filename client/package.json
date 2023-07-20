@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.3.34",
     "@apollo/react-hooks": "^4.0.0",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
