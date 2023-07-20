@@ -6,10 +6,14 @@ import Remaining from '../components/Budget/Remaining';
 import ExpenseList from '../components/Budget/ExpenseList';
 import AddExpense from '../components/Budget/AddExpense';
 import { AppProvider } from '../context/AppContext';
+import Auth from '../utils/auth';
 
 
 const Budget = () => {
     return (
+      <>
+    {Auth.loggedIn() ? (
+      <>
       <AppProvider>
       {/* starting budget */}
       {/* bootstrap  container budget*/}
@@ -50,6 +54,15 @@ const Budget = () => {
 
       </div>  
       </AppProvider>
+      </>
+    ) : (
+      <div fluid="true" className='text-light bg-dark p-5'>
+        <div className='container p-4'>
+          <h1>You must be logged in to view this page.</h1>
+        </div>
+      </div>
+    )}
+  </>
     );
   };
   

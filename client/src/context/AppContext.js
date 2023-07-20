@@ -16,6 +16,8 @@ const AppReducer = (state, action) => {
 				),
 			};
 
+
+
 			case 'SET_BUDGET':
 				return {
 					...state,

@@ -1,12 +1,10 @@
 import React, { useContext, useState, useEffect } from "react";
 import ExpenseItem from "./ExpenseItem";
 import { AppContext } from "../../context/AppContext";
-// import Auth from '../utils/auth';
 
 
 const ExpenseList = () => {
     const { expenses } = useContext(AppContext);
-    
 
    
 
@@ -15,12 +13,11 @@ const ExpenseList = () => {
 
     // const storedExpenses = JSON.parse(localStorage.getItem('expense'))
 
-    // const [expense, setExpense] = useState(''); 
+    const [expense, setExpense] = useState(''); 
 
-    // useEffect(() => {
-    //     localStorage.setItem('expense', JSON.stringify(expenses))
-    // }, []);
-    
+    useEffect(() => {
+        localStorage.setItem('expense', JSON.stringify(expenses))
+    }, [expenses]);
  
     return (
           <ul>
