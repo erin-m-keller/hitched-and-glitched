@@ -16,50 +16,36 @@ function CountdownPage() {
     var year = parseInt(parts[2], 10);
     var d = new Date(year, month - 1, day);
     if (!d.getTime()) return false; // NaN value, invalid date
-    return (
-      d.getDate() === day && d.getMonth() + 1 === month && d.getFullYear() === year
-    );
+    return d.getDate() === day && d.getMonth() + 1 === month && d.getFullYear() === year;
   }
 
-  useEffect(() => {
-    let countdownInterval;
-
-    // Function to initiate the countdown
-    function startCountdown() {
-      if (!isValidDate(targetDate)) {
-        console.log("Invalid date format. Please try again.");
-        return;
-      }
-
-      var today = new Date().getTime();
-      var [month, day, year] = targetDate.split('/');
-      var target = new Date(year, month - 1, day).getTime();
-
-      if (today > target) {
-        console.log("Invalid date. The target date has already passed.");
-        return;
-      }
-
-      // Start the countdown
-      countdownInterval = setInterval(function () {
-        var now = new Date().getTime();
-        var distance = target - now;
-
-        if (distance <= 0) {
-          clearInterval(countdownInterval);
-          setCountdownCompleted(true);
-        }
-      }, 1000);
+  // Function to start the countdown
+  function startCountdown() {
+    if (!isValidDate(targetDate)) {
+      console.log('Invalid date format. Please try again.');
+      return;
     }
 
-    // Initiate the countdown when the component mounts
-    startCountdown();
+    var today = new Date().getTime();
+    var [month, day, year] = targetDate.split('/');
+    var target = new Date(year, month - 1, day).getTime();
 
-    // Clean up the interval when the component unmounts
-    return () => {
-      clearInterval(countdownInterval);
-    };
-  }, [targetDate]);
+    if (today > target) {
+      console.log('Invalid date. The target date has already passed.');
+      return;
+    }
+
+    // Start the countdown
+    var countdownInterval = setInterval(function () {
+      var now = new Date().getTime();
+      var distance = target - now;
+
+      if (distance <= 0) {
+        clearInterval(countdownInterval);
+        setCountdownCompleted(true);
+      }
+    }, 1000);
+  }
 
   return (
     <div>
@@ -69,7 +55,7 @@ function CountdownPage() {
         onChange={(e) => setTargetDate(e.target.value)}
         placeholder="Enter target date (MM/DD/YYYY)"
       />
-      <button id="startButton" onClick={() => setCountdownCompleted(false)}>
+      <button id="startButton" onClick={startCountdown}>
         Start Countdown
       </button>
 
