@@ -23,3 +23,31 @@ export const LOGIN_USER = gql`
     }
   }
 `;
+
+export const ADD_INSPIRATION = gql`
+  mutation addInspiration($inspirationData: NewInspirationInput!) {
+    addInspiration(inspirationData: $inspirationData) {
+      savedInspirations {
+        id
+        likes
+        backgroundImage
+        alt_description
+        raw
+      }
+    }
+  }
+`;
+
+export const REMOVE_INSPIRATION = gql`
+  mutation removeInspiration($inspirationId: String!) {
+    removeInspiration(inspirationId: $inspirationId) {
+      savedInspirations {
+        id
+        likes
+        backgroundImage
+        alt_description
+        raw
+      }
+    }
+  }
+`;

@@ -1,20 +1,18 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import LoginForm from './LoginForm';
 import SignUpForm from './SignupForm';
 import Auth from '../utils/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRightFromBracket, faBell, faHouse, faTachometerAlt } from '@fortawesome/free-solid-svg-icons';
-import { Layout, Typography, Menu, Modal, Tabs, Card } from 'antd';
-const { Item } = Menu;
-
+import { faRightFromBracket, faBell, faHouse, faTachometerAlt, faBars, faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import { Layout, Drawer, Menu, Modal, Tabs, Card } from 'antd';
 const { Header } = Layout;
-const { Text } = Typography;
-const { TabPane } = Tabs;
 
 const AppNavbar = () => {
   const [open, setOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('login');
+  const [isDrawerVisible, setDrawerVisible] = useState(false);
+  const location = useLocation();
 
   const handleOpen = () => {
     setOpen(true);
@@ -27,59 +25,97 @@ const AppNavbar = () => {
   const handleTabChange = (key) => {
     setActiveTab(key);
   };
+
+  const showDrawer = () => {
+    setDrawerVisible(true);
+  };
+
+  const closeDrawer = () => {
+    setDrawerVisible(false);
+  };
+
+  const isMenuItemActive = (key) => {
+    return location.pathname === key;
+  };
+
+  const menuItems = [
+      {
+        key: "1",
+        className: "unclickable-item",
+        icon: <FontAwesomeIcon icon={faBell} />,
+        label:"Hitched & Glitched"
+      },
+      {
+        key: "/",
+        icon: <FontAwesomeIcon icon={faHouse} />,
+        label: <Link to="/" className="navigation-link">Home</Link>,
+        className: isMenuItemActive("/") ? 'active' : 'inactive'
+      },
+      {
+        key: "/dashboard",
+        icon: <FontAwesomeIcon icon={faTachometerAlt} />,
+        label: <Link to="/dashboard" className="navigation-link">Dashboard</Link>,
+        className: isMenuItemActive("/dashboard") ? 'active' : 'inactive'
+      },
+      {
+        key: "/inspiration",
+        icon: <FontAwesomeIcon icon={faLightbulb} />,
+        label: <Link to="/inspiration" className="navigation-link">Inspiration</Link>,
+        className: isMenuItemActive("/inspiration") ? 'active' : 'inactive'
+      },
+      {
+        key: "/budget",
+        icon: <FontAwesomeIcon icon={faTachometerAlt} />,
+        label: <Link to="/budget" className="navigation-link">Budget</Link>,
+        className: isMenuItemActive("/budget") ? 'active' : 'inactive'
+      },
+      ...(Auth.loggedIn()
+      ? [
+          {
+            key: '/logout',
+            icon: <FontAwesomeIcon icon={faRightFromBracket} />,
+            label: 'Logout',
+            onClick: Auth.logout,
+          },
+        ]
+      : [
+          {
+            key: '/login',
+            icon: <FontAwesomeIcon icon={faRightFromBracket} />,
+            label: 'Login/Sign Up',
+            onClick: handleOpen,
+          },
+        ]),
+  ];
+    
+  //<Menu items={menuItems} />
   
   return (
     <>
       <Header className="app-header">
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-          <Item key="1" className="unclickable-item">
-            <FontAwesomeIcon icon={faBell} />
-            <Text strong>Hitched & Glitched</Text>
-          </Item>
-          <Item key="2">
-            <Link to="/" className="navigation-link">
-              <FontAwesomeIcon icon={faHouse} />
-              Home
-            </Link>
-          </Item>
-          {Auth.loggedIn() && (
-            <Item key="3">
-              <Link to="/dashboard" className="navigation-link">
-                <FontAwesomeIcon icon={faTachometerAlt} />
-                Dashboard
-              </Link>
-            </Item>
-          )}
-          {Auth.loggedIn() ? (
-            <Item key="4">
-              <div className="navigation-link" onClick={Auth.logout}>
-                <FontAwesomeIcon icon={faRightFromBracket} />
-                Logout
-              </div>
-            </Item>
-          ) : (
-            <Item key="4">
-              <div className="navigation-link" onClick={handleOpen}>
-                <FontAwesomeIcon icon={faRightFromBracket} />
-                Login/Sign Up
-              </div>
-            </Item>
-          )}
-        </Menu>
+        <div className="hg-menu">
+          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['/']} items={menuItems} className="hide-mobile" />
+          <div className="drawer-icon hide-desktop" onClick={showDrawer}>
+            <FontAwesomeIcon icon={faBars} />
+          </div>
+        </div>
         <Modal open={open} onCancel={handleClose} footer={null} centered>
           <Tabs activeKey={activeTab} onChange={handleTabChange}>
-            <TabPane tab="Login" key="login">
+            <Tabs.TabPane tab="Login" key="login">
               <Card>
                 <LoginForm />
               </Card>
-            </TabPane>
-            <TabPane tab="Sign Up" key="signup">
+            </Tabs.TabPane>
+            <Tabs.TabPane tab="Sign Up" key="signup">
               <Card>
                 <SignUpForm />
               </Card>
-            </TabPane>
+            </Tabs.TabPane>
           </Tabs>
         </Modal>
+        <Drawer placement="right" open={isDrawerVisible} onClose={closeDrawer}>
+          <Menu mode="vertical" defaultSelectedKeys={['/']} items={menuItems} />
+        </Drawer>
       </Header>
     </>
   );

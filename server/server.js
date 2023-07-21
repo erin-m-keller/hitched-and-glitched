@@ -21,6 +21,8 @@ app.use(express.urlencoded({ extended: false }));
 // configuring Express to parse JSON data
 app.use(express.json()); 
 
+app.use(express.static(__dirname + '/public'));
+
 // serve up static assets
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
