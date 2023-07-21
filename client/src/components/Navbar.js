@@ -63,6 +63,12 @@ const AppNavbar = () => {
         label: <Link to="/inspiration" className="navigation-link">Inspiration</Link>,
         className: isMenuItemActive("/inspiration") ? 'active' : 'inactive'
       },
+      {
+        key: "/budget",
+        icon: <FontAwesomeIcon icon={faTachometerAlt} />,
+        label: <Link to="/budget" className="navigation-link">Budget</Link>,
+        className: isMenuItemActive("/budget") ? 'active' : 'inactive'
+      },
       ...(Auth.loggedIn()
       ? [
           {
