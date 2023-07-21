@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import inspiration from "../assets/images/inspiration.jpeg";
 import countdown from "../assets/images/countdown.jpeg";
 import venue from "../assets/images/venue.jpeg";
-import budget from "../assets/images/budget.jpeg";
+
 
 const Home = () => {
   return (
@@ -47,7 +47,7 @@ const Home = () => {
         </div>
         <div className="homepage-card">
           <Link to="/budget" className="navigation-link">
-            <img src={budget} alt="Wedding Budget" />
+            <img src="" alt="Wedding Budget" />
             <div className="overlay">
               <div className="overlay-text">
                 Plan a Wedding Budget
