@@ -1,5 +1,6 @@
 import React from 'react';
 import { Layout, Menu, InputNumber } from 'antd';
+// const { Client } = require("@googlemaps/google-maps-services-js");
 
 const { Sider, Content } = Layout;
 
@@ -53,6 +54,47 @@ const onChange = (value) => {
 };
 
 const Vendors = () => {
+	const googleMapsApiKey = "AIzaSyAuoc5IMttQ0EzKiOjOVOMmbwx4MZBkYTM";
+	const script = document.createElement('script');
+	script.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&libraries=places&callback=initMap`;
+	script.async = true;
+
+	window.initMap = function () {
+		const map = new google.maps.Map(document.getElementById("map"), {
+		  center: { lat: 37.7749, lng: -122.4194 },
+		  zoom: 8,
+		});
+		const infoWindow = new google.maps.InfoWindow();
+		const locationButton = document.createElement("button");
+		locationButton.textContent = "Pan to Current Location";
+		locationButton.classList.add("custom-map-control-button");
+		map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+		locationButton.addEventListener("click", () => {
+	  
+		  if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(
+			  (position) => {
+				const pos = {
+				  lat: position.coords.latitude,
+				  lng: position.coords.longitude,
+				};
+				infoWindow.setPosition(pos);
+				infoWindow.setContent("Location found.");
+				infoWindow.open(map);
+				console.log(pos)
+				map.setCenter(pos);
+			  },
+			  () => {
+				handleLocationError(true, infoWindow, map.getCenter());
+			  }
+			);
+		  } else {
+	  
+			handleLocationError(false, infoWindow, map.getCenter());
+		  }
+		});
+	  };
+
 	return (
 		<>
 			<Layout className="main-content">
@@ -64,6 +106,7 @@ const Vendors = () => {
 				</Sider>
 				<Content className="content">
 					<h2>Vendor List</h2>
+					<div id="map"></div>
 				</Content>
 			</Layout>
 		</>
