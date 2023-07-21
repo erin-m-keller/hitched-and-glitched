@@ -9,6 +9,22 @@ const typeDefs = gql`
     email: String!
     savedPlaces:[Place] 
     placeCount: Int
+
+    savedInspirations: [Inspiration]!
+  }
+  type Inspiration {
+    id: String!
+    likes: Int!
+    backgroundImage: String!
+    alt_description: String!
+    raw: String!
+  }
+  input NewInspirationInput {
+    id: String!
+    likes: Int!
+    backgroundImage: String!
+    alt_description: String!
+    raw: String!
   }
   type Place {
     location: String!
@@ -28,11 +44,13 @@ const typeDefs = gql`
   }  
 
   type Query {
-    hello: String # Placeholder query
+    getUser: User
   }
   type Mutation {
     createUser(loginData:CreateUserInput!): Auth
     login(email: String!, password: String!): Auth
+    addInspiration(inspirationData: NewInspirationInput!): User!
+    removeInspiration(inspirationId: String!): User!
   }
 `;
 

@@ -14,42 +14,42 @@ const Home = () => {
         <img src="robot.png" width="200px"></img>
         <p className="text-gradient description"> My name is B-B-Belle. I have been imported here to help you not stress about the HOPEfully happiest day of your life. This site holds many g-goodies to help you organize and navigate your thoughts so you dont b-b-burn your circuits</p>
       </div>
-      <div class="flex-container">
-        <div class="homepage-card">
+      <div className="flex-container">
+        <div className="homepage-card">
           <a href="/inspiration">
             <img src={inspiration} alt="Inspiration" />
-            <div class="overlay">
-              <div class="overlay-text">
+            <div className="overlay">
+              <div className="overlay-text">
                 Search for Inspiration
               </div>
             </div>
           </a>
         </div>
-        <div class="homepage-card">
+        <div className="homepage-card">
           <Link to="/countdown" className="navigation-link">
             <img src={countdown} alt="Wedding Countdown" />
-            <div class="overlay">
-              <div class="overlay-text">
+            <div className="overlay">
+              <div className="overlay-text">
                 Countdown to the big day!
               </div>
             </div>
           </Link>
         </div>
-        <div class="homepage-card">
+        <div className="homepage-card">
           <Link to="/venues-and-vendors" className="navigation-link">
             <img src={venue} alt="Search Venues and Vendors" />
-            <div class="overlay">
-              <div class="overlay-text">
+            <div className="overlay">
+              <div className="overlay-text">
                 Search for Venues or Vendors
               </div>
             </div>
           </Link>
         </div>
-        <div class="homepage-card">
+        <div className="homepage-card">
           <Link to="/budget" className="navigation-link">
             <img src={budget} alt="Wedding Budget" />
-            <div class="overlay">
-              <div class="overlay-text">
+            <div className="overlay">
+              <div className="overlay-text">
                 Plan a Wedding Budget
               </div>
             </div>

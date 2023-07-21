@@ -1,8 +1,9 @@
 // initialize variables
 const { Schema, model } = require('mongoose'),
-      bcrypt = require('bcrypt');
 // import schema from Place.js
-const placeSchema = require('./places');
+const placeSchema = require('./places'),
+      bcrypt = require('bcrypt'),
+      inspirationSchema = require('./Inspiration');
 // define the userSchema
 const userSchema = new Schema(
   {
@@ -24,7 +25,12 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    savedPlaces: [placeSchema]
+
+    savedPlaces: [placeSchema],
+
+    // define the savedBooks field as an array of data that adheres to the bookSchema
+    savedInspirations: [inspirationSchema],
+
   },
   // define options for the schema
   // include virtual properties when converting to JSON

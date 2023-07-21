@@ -5,8 +5,16 @@ class AuthService {
   // get user profile data from decoded token
   getProfile = () => {
     const token = this.getToken();
-    const decodedToken = decode(token);
-    return decodedToken.data.email;
+    if (token) {
+      try {
+        const decodedToken = decode(token);
+        return decodedToken.data.email;
+      } catch (err) {
+        console.error("Invalid token:", err);
+        return null;
+      }
+    }
+    return null;
   };
   // check if the user is logged in
   loggedIn = () => {
