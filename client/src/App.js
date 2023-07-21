@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
+import Vendors from './pages/Vendors';
 import Inspiration from './pages/Inspiration';
 import Navbar from './components/Navbar';
 import Countdown from './pages/Countdown'; 
@@ -46,6 +47,7 @@ function App() {
             <Route exact path='/budget' component={Budget} />
             {/* Route for the Dashboard page */}
             <Route exact path='/dashboard' component={Dashboard} />
+            <Route exact path='/vendors' component={Vendors} />
             {/* Route for the Inspiration page */}
             <Route exact path='/inspiration' component={Inspiration} />
             {/* Route for countdown page*/}
