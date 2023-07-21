@@ -1,7 +1,8 @@
 // initialize variables
 const { Schema, model } = require('mongoose'),
       bcrypt = require('bcrypt');
-
+// import schema from Place.js
+const placeSchema = require('./places');
 // define the userSchema
 const userSchema = new Schema(
   {
@@ -23,6 +24,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    savedPlaces: [placeSchema]
   },
   // define options for the schema
   // include virtual properties when converting to JSON
@@ -47,7 +49,9 @@ userSchema.pre('save', async function (next) {
 userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password); // cmpare the provided password with the hashed password
 };
-
+userSchema.virtual('placeCount').get(function () {
+  return this.savedPlaces.length;
+});
 // create the User model using the userSchema
 const User = model('User', userSchema);
 

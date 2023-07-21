@@ -7,21 +7,31 @@ const typeDefs = gql`
     _id: ID!
     username: String!
     email: String!
+    savedPlaces:[Place] 
+    placeCount: Int
   }
-  input CreateUserInput {
+  type Place {
+    location: String!
+    address: String!
+    guestCapacity: Int!
+    contactNumber: String!
+    description: String!
+  }
+  input CreateUserInput{
     username: String!
     email: String!
     password: String!
   }
   type Auth {
-    token: String!
+    token: ID!
     user: User!
   }  
+
   type Query {
     hello: String # Placeholder query
   }
   type Mutation {
-    createUser(username: String!, email: String!, password: String!): Auth
+    createUser(loginData:CreateUserInput!): Auth
     login(email: String!, password: String!): Auth
   }
 `;

@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Inspiration from './pages/Inspiration';
 import Navbar from './components/Navbar';
+import Venue from './pages/Venue';
 
 const cache = new InMemoryCache();
 async function persistApolloCache() {
@@ -37,6 +38,7 @@ function App() {
               <Route exact path='/' component={Home} />
               <Route exact path='/dashboard' component={Dashboard} />
               <Route exact path='/inspiration' component={Inspiration} />
+              <Route exact path='/venue' component={Venue}/>
               <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
             </Switch>
           </>
