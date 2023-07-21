@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react"; 
+import React, { useState } from "react"; 
 import { AppContext } from '../../context/AppContext';
 import { useContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { Button, Input } from 'antd';
+import { Input } from 'antd';
 
 const AddExpense = () => {
     const { dispatch } = useContext(AppContext);

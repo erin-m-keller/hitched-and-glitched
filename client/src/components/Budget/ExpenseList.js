@@ -6,11 +6,16 @@ import { AppContext } from "../../context/AppContext";
 const ExpenseList = () => {
     const { expenses } = useContext(AppContext);
 
-    const [expense, setExpense] = useState(''); 
+    const [saveExpense, setExpense] = useState(expenses); 
 
     useEffect(() => {
-        localStorage.setItem('expense', JSON.stringify(expenses))
-    }, [expenses]);
+        const getExpenses = window.localStorage.getItem('expenseList');
+        setExpense(JSON.parse(getExpenses))
+    }, [])
+
+    useEffect(() => {
+        window.localStorage.setItem('expenseList', JSON.stringify(saveExpense));
+    }, [saveExpense])
  
     return (
           <ul>

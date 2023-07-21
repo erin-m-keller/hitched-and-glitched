@@ -1,5 +1,5 @@
 import { AppContext } from "../../context/AppContext";
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { Button } from 'antd';
 
 const ExpenseItem = (props) => {
@@ -11,7 +11,7 @@ const ExpenseItem = (props) => {
 			payload: props.id,
 		});
 	};
-    
+
     return (
         <li className='border aliceBlue'>
             <div className="listName">
@@ -25,7 +25,7 @@ const ExpenseItem = (props) => {
                 </span>
                 <Button type='primary' danger ghost onClick={handleDeleteExpense}>Delete</Button>
             </div>
-        </li>
+            </li>
     );
 };
 
