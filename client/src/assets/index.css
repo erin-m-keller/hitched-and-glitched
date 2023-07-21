@@ -276,6 +276,10 @@ p,
   }
 }
 
+/* for the venue background */
+
+
+
 .budgetSection {
   display: flex;
   justify-content: center;
@@ -352,5 +356,3 @@ p,
   .salmonText {
     color: #FE7B72;
   }
-
-  

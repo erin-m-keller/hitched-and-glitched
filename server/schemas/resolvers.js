@@ -20,9 +20,9 @@ const resolvers = {
   // modify data on the server
   Mutation: {
     // create a new user on sign up
-    createUser: async (_,input) => {
+    createUser: async (_,{loginData}) => {
       // initialize variables
-      const user = await User.create(input),
+      const user = await User.create(loginData),
             token = generateAuthToken(user);
       // return token and user object
       return { token, user };

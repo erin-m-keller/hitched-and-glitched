@@ -7,8 +7,8 @@ import Dashboard from './pages/Dashboard';
 import Vendors from './pages/Vendors';
 import Inspiration from './pages/Inspiration';
 import Navbar from './components/Navbar';
+import Venue from './pages/Venue';
 import Countdown from './pages/Countdown'; 
-
 import Budget from './pages/Budget';
 
 // Create a new in-memory cache for Apollo Client
@@ -33,6 +33,7 @@ client.clearStore();
 
 function App() {
   return (
+
     // Wrap the entire application with ApolloProvider to enable Apollo Client
     <ApolloProvider client={client}>
       <Router>
@@ -47,6 +48,7 @@ function App() {
             <Route exact path='/budget' component={Budget} />
             {/* Route for the Dashboard page */}
             <Route exact path='/dashboard' component={Dashboard} />
+            <Route exact path='/venue' component={Venue}/>
             <Route exact path='/vendors' component={Vendors} />
             {/* Route for the Inspiration page */}
             <Route exact path='/inspiration' component={Inspiration} />

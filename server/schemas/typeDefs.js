@@ -7,6 +7,9 @@ const typeDefs = gql`
     _id: ID!
     username: String!
     email: String!
+    savedPlaces:[Place] 
+    placeCount: Int
+
     savedInspirations: [Inspiration]!
   }
   type Inspiration {
@@ -23,20 +26,28 @@ const typeDefs = gql`
     alt_description: String!
     raw: String!
   }
-  input CreateUserInput {
+  type Place {
+    location: String!
+    address: String!
+    guestCapacity: Int!
+    contactNumber: String!
+    description: String!
+  }
+  input CreateUserInput{
     username: String!
     email: String!
     password: String!
   }
   type Auth {
-    token: String!
+    token: ID!
     user: User!
   }  
+
   type Query {
     getUser: User
   }
   type Mutation {
-    createUser(username: String!, email: String!, password: String!): Auth
+    createUser(loginData:CreateUserInput!): Auth
     login(email: String!, password: String!): Auth
     addInspiration(inspirationData: NewInspirationInput!): User!
     removeInspiration(inspirationId: String!): User!

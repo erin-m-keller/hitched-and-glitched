@@ -1,3 +1,4 @@
+import lightBulb from "../assets/images/lightBulb.jpg";
 import React, { useEffect, useState } from 'react';
 import Auth from '../utils/auth';
 import { Card, Empty, notification } from 'antd';
@@ -7,8 +8,8 @@ import { GET_USER } from "../utils/queries";
 import { REMOVE_INSPIRATION } from "../utils/mutations";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareUpRight, faBookmark as faBookmarkFilled, faHeart } from '@fortawesome/free-solid-svg-icons';
-
 const Dashboard = () => {
+  
   const headers = {
     headers: {
       Authorization: `Bearer ${Auth.getToken()}`
@@ -80,10 +81,77 @@ const Dashboard = () => {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
+  const goToInspire = () => {
+    // go to page function
+    console.log('go to inspire');
+  };
 
+  const goToCountdown = () => {
+    // go to page function
+    console.log('go to countdown');
+  };
 
-return (
-  <>
+  const goToBudget = () => {
+    // go to page function
+    console.log('go to budget');
+  };
+
+  const goToVender = () => {
+    // go to page function
+    console.log('go to vender');
+  };
+
+  const goToVenue = () => {
+    // go to page function
+    console.log('go to venue');
+  };
+
+  return (
+    <div className="mainDash">
+      <div className="flex-container">
+        <div className="dashDirect-light">
+          <a href="/lightBulb">
+            <img src="../lightBulb.jpeg" alt="Light" />
+          </a>
+          <button className="light" onClick={goToInspire}>
+            <img src={lightBulb}alt="Light" />
+          </button>
+        </div>
+        <div className="dashDirect-count">
+          <a href="/dDAy">
+            <img src="../dDay" alt="Count" />
+          </a>
+          <button className="dooms" onClick={goToCountdown}>
+            <img src="./images/dDay.jpg.jpg" alt="DoomsDay" />
+          </button>
+        </div>
+        <div className="dashDirect-funds">
+          <a href="/piggyBank">
+            <img src="../piggyBAnk" alt="Funds" />
+          </a>
+          <button className="piggy" onClick={goToBudget}>
+            <img src="./images/piggyBank.jpg" alt="Budget" />
+          </button>
+        </div>
+        <div className="dashDirect-food">
+          <a href="/cake">
+            <img src="../cake" alt="Food" />
+          </a>
+          <button className="food" onClick={goToVender}>
+            <img src="../images/food.jpg" alt="Food" />
+          </button>
+        </div>
+        <div className="dashDirect-venue">
+          <a href="/alter">
+            <img src="../alter" alt="Venue" />
+          </a>
+          <button className="alter" onClick={goToVenue}>
+            <img src="./images/alter.jpg" alt="Alter" />
+          </button>
+        </div>
+        <h1>The first s-s-step is always the hardest, there's no wrong p-p-p-lace to start!</h1>
+      <img src="robot.png" width="200px" alt="Robot" />
+      </div>
     {Auth.loggedIn() ? (
       <>
         <div className="hero">
@@ -140,7 +208,8 @@ return (
         </div>
       </div>
     )}
-  </>
-)};
+    </div>
+  );
+}
 
 export default Dashboard;
