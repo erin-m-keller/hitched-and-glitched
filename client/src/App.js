@@ -8,6 +8,7 @@ import Inspiration from './pages/Inspiration';
 import Navbar from './components/Navbar';
 import Countdown from './pages/Countdown'; 
 
+import Budget from './pages/Budget';
 
 // Create a new in-memory cache for Apollo Client
 const cache = new InMemoryCache();
@@ -41,6 +42,8 @@ function App() {
           <Switch>
             {/* Route for the Home page */}
             <Route exact path='/' component={Home} />
+            {/* Route for the Budget page */}
+            <Route exact path='/budget' component={Budget} />
             {/* Route for the Dashboard page */}
             <Route exact path='/dashboard' component={Dashboard} />
             {/* Route for the Inspiration page */}
