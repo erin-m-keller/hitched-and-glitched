@@ -72,31 +72,42 @@ const Countdown = () => {
     }
 
     const handleOnChange = (date) => {
-        const targetDate = new Date(date.$d);
-        const formattedDate = formatDateToYYYYMMDD(targetDate);
-        console.log(formattedDate); // Output: "YYYY-MM-DD"
-        countdownTimer(formattedDate);
-    }
+      const targetDate = new Date(date.$d);
+      const formattedDate = formatDateToYYYYMMDD(targetDate);
+      console.log(formattedDate); // Output: "YYYY-MM-DD"
+      countdownTimer(formattedDate);
+  }
 
-    return (
-        <>
-            <Space direction="vertical">
-                <DatePicker onChange={handleOnChange} id="dateInput" />
-            </Space>
-            <div
-                id="countdown-timer"
+  return (
+    <>
+        <Space direction="vertical">
+            <DatePicker
+                onChange={handleOnChange}
+                id="dateInput"
                 style={{
-                    fontFamily: 'Arial, sans-serif',
-                    fontSize: '1.5rem',
-                    fontWeight: 'bold',
-                    color: '#FE7B72', // Customize the color to your preference
-                    margin: '1rem 0',
+                    width: '300px', // Adjust the width to your preference
+                    height: '40px', // Adjust the height to your preference
+                    fontSize: '1.5rem', // Adjust the font size to your preference
                 }}
-            >
-                {countdownText}
-            </div>
-        </>
-    );
+            />
+        </Space>
+        <div
+            id="countdown-timer"
+            style={{
+                fontFamily: 'Arial, sans-serif',
+                fontSize: '5rem', // Increase the font size to make it bigger
+                fontWeight: 'bold',
+                color: '#FE7B72', // Customize the color to your preference
+                margin: '2rem 0', // Add more margin to the top to move it down
+                display: 'flex',
+                justifyContent: 'center', // Center the content horizontally
+                alignItems: 'center', // Center the content vertically
+            }}
+        >
+            {countdownText}
+        </div>
+    </>
+);
 };
 
 export default Countdown;
