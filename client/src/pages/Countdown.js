@@ -1,74 +1,81 @@
-import React, { useState, useEffect } from 'react';
-import { Input } from 'antd';
-import Auth from '../utils/auth';
+import React from 'react';
+import { DatePicker, Space } from 'antd';
 
-function CountdownPage() {
-  const [targetDate, setTargetDate] = useState('');
-  const [countdownCompleted, setCountdownCompleted] = useState(false);
-
-  // Function to validate the date format (MM/DD/YYYY)
-  function isValidDate(dateString) {
-    var regEx = /^\d{2}\/\d{2}\/\d{4}$/;
-    if (!dateString.match(regEx)) return false; // Invalid format
-    var parts = dateString.split('/');
-    var day = parseInt(parts[1], 10);
-    var month = parseInt(parts[0], 10);
-    var year = parseInt(parts[2], 10);
-    var d = new Date(year, month - 1, day);
-    if (!d.getTime()) return false; // NaN value, invalid date
-    return d.getDate() === day && d.getMonth() + 1 === month && d.getFullYear() === year;
-  }
-
-  // Function to start the countdown
-  function startCountdown() {
-    if (!isValidDate(targetDate)) {
-      console.log('Invalid date format. Please try again.');
-      return;
+const Countdown = () => {
+    // Function to validate the date format (YYYY-MM-DD)
+    const isValidDate = (dateString) => {
+        var regEx = /^\d{4}-\d{2}-\d{2}$/;
+        if (!dateString.match(regEx)) return false; // Invalid format
+        var d = new Date(dateString);
+        var dNum = d.getTime();
+        if (!dNum && dNum !== 0) return false; // NaN value, invalid date
+        return d.toISOString().slice(0, 10) === dateString;
+    }
+    // Function to initiate the countdown
+    const countdownTimer = (formattedDate) => {
+        var targetDate = formattedDate;
+    
+        if (!isValidDate(targetDate)) {
+            console.log("Invalid date format. Please try again.");
+            return;
+        }
+    
+        var today = new Date().getTime();
+        var target = new Date(targetDate).getTime();
+    
+        if (today > target) {
+            console.log("Invalid date. The target date has already passed.");
+            return;
+        }
+    
+        // Create and append the image element
+        var img = document.createElement("img");
+        img.src = "../../images-for-H&G/wedding-countdown.jpg";
+        img.alt = "Wedding Countdown";
+    
+        var timer = document.getElementById("countdown-timer");
+        timer.appendChild(img);
+    
+        var countdownInterval = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = target - now;
+        
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+            console.log("Countdown: " + days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds");
+        
+            if (distance <= 0) {
+                clearInterval(countdownInterval);
+                console.log("Countdown completed!");
+            }
+        }, 1000);
     }
 
-    var today = new Date().getTime();
-    var [month, day, year] = targetDate.split('/');
-    var target = new Date(year, month - 1, day).getTime();
-
-    if (today > target) {
-      console.log('Invalid date. The target date has already passed.');
-      return;
+    const formatDateToYYYYMMDD = (date) => {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        return `${year}-${month}-${day}`;
     }
 
-    // Start the countdown
-    var countdownInterval = setInterval(function () {
-      var now = new Date().getTime();
-      var distance = target - now;
 
-      if (distance <= 0) {
-        clearInterval(countdownInterval);
-        setCountdownCompleted(true);
-      }
-    }, 1000);
-  }
+    const handleOnChange = (date) => {
+        const targetDate = new Date(date.$d);
+        const formattedDate = formatDateToYYYYMMDD(targetDate);
+        console.log(formattedDate); // Output: "YYYY-MM-DD"
+        countdownTimer(formattedDate);
+    }
 
-  return (
-    <div>
-      <Input
-        id="dateInput"
-        value={targetDate}
-        onChange={(e) => setTargetDate(e.target.value)}
-        placeholder="Enter target date (MM/DD/YYYY)"
-      />
-      <button id="startButton" onClick={startCountdown}>
-        Start Countdown
-      </button>
+    return (
+        <>
+            <Space direction="vertical">
+                <DatePicker onChange={handleOnChange} id="dateInput" />
+            </Space>
+            <div id="countdown-timer"></div>
+        </>
+    )};
 
-      {countdownCompleted ? (
-        <div>
-          <img src="client/images-for-H&G/wedding-countdown.jpg" alt="Wedding Countdown" />
-          <p>Countdown completed!</p>
-        </div>
-      ) : (
-        <p>Countdown in progress...</p>
-      )}
-    </div>
-  );
-}
-
-export default CountdownPage;
+export default Countdown;
