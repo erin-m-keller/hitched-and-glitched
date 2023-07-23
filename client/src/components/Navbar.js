@@ -4,7 +4,7 @@ import LoginForm from './LoginForm';
 import SignUpForm from './SignupForm';
 import Auth from '../utils/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRightFromBracket, faBell, faHouse, faTachometerAlt, faBars, faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import { faRightFromBracket, faBell, faHouse, faTachometerAlt, faBars, faLightbulb, faCoins, faUsers, faBuilding, faStopwatch } from '@fortawesome/free-solid-svg-icons';
 import { Layout, Drawer, Menu, Modal, Tabs, Card } from 'antd';
 const { Header } = Layout;
 
@@ -39,6 +39,18 @@ const AppNavbar = () => {
   };
 
   const menuItems = [
+    {
+      key: "1",
+      className: "unclickable-item",
+      icon: <FontAwesomeIcon icon={faBell} />,
+      label:"Hitched & Glitched"
+    },
+    {
+      key: "/",
+      icon: <FontAwesomeIcon icon={faHouse} />,
+      label: <Link to="/" className="navigation-link">Home</Link>,
+      className: isMenuItemActive("/") ? 'active' : 'inactive'
+    },
       ...(Auth.loggedIn()
       ? [
         {
@@ -55,25 +67,25 @@ const AppNavbar = () => {
         },
         {
           key: "/budget",
-          icon: <FontAwesomeIcon icon={faTachometerAlt} />,
+          icon: <FontAwesomeIcon icon={faCoins} />,
           label: <Link to="/budget" className="navigation-link">Budget</Link>,
           className: isMenuItemActive("/budget") ? 'active' : 'inactive'
         },
         {
           key: "/vendors",
-          icon: <FontAwesomeIcon icon={faTachometerAlt} />,
+          icon: <FontAwesomeIcon icon={faUsers} />,
           label: <Link to="/vendors" className="navigation-link">Vendors</Link>,
           className: isMenuItemActive("/vendors") ? 'active' : 'inactive'
         },
         {
           key: "/venues",
-          icon: <FontAwesomeIcon icon={faTachometerAlt} />,
+          icon: <FontAwesomeIcon icon={faBuilding} />,
           label: <Link to="/venues" className="navigation-link">Venues</Link>,
           className: isMenuItemActive("/venues") ? 'active' : 'inactive'
         },
         {
           key: "/countdown",
-          icon: <FontAwesomeIcon icon={faTachometerAlt} />,
+          icon: <FontAwesomeIcon icon={faStopwatch} />,
           label: <Link to="/countdown" className="navigation-link">Countdown</Link>,
           className: isMenuItemActive("/countdown") ? 'active' : 'inactive'
         },
@@ -85,18 +97,6 @@ const AppNavbar = () => {
         },
         ]
       : [
-          {
-            key: "1",
-            className: "unclickable-item",
-            icon: <FontAwesomeIcon icon={faBell} />,
-            label:"Hitched & Glitched"
-          },
-          {
-            key: "/",
-            icon: <FontAwesomeIcon icon={faHouse} />,
-            label: <Link to="/" className="navigation-link">Home</Link>,
-            className: isMenuItemActive("/") ? 'active' : 'inactive'
-          },
           {
             key: '/login',
             icon: <FontAwesomeIcon icon={faRightFromBracket} />,

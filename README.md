@@ -31,8 +31,12 @@
 ![apollo](https://img.shields.io/badge/-Apollo-61DAFB?color=orange&style=flat)
 
   ## User Story
-  
-  // TODO: Add User Story
+
+  ```md
+  AS A newly engaged couple
+  I WANT a modern and user-friendly wedding website
+  SO THAT I can easily save wedding inspirations, manage my budget, have a countdown to the big day, and efficiently search for venues and vendors.
+  ```
   
   ## Installation 
 
@@ -49,20 +53,26 @@
   ```bash
     SECRET="value goes here"
   ```
+  * Create .env file in the client folder, and add api keys/secrets.
+  ```bash
+    REACT_APP_UNSPLASH_KEY = ""
+    REACT_APP_UNSPLASH_SECRET = ""
+    REACT_APP_GOOGLE_KEY = ""
+  ```
   * Start the application.
   ```md
-    npm start
+    npm run start:dev
   ```
   > Application is available at: http://localhost:3000/  
   > GraphQL is available at: http://localhost:3001/graphql
 
   ## Screenshot
   
-  // TODO: Add Screenshot
+  ![Screenshot](./finished-product.png)
   
   ## Deployed page
 
-  // TODO: Add Heroku Link
+  [View Published Page](https://hitched-and-glitched-697b7a3de50f.herokuapp.com/ )
 
   ## The Team
 
@@ -74,11 +84,11 @@
 
   ## The Team Tasks 
 
-  **Adrena Lewis**: // TODO: Add tasks here  
-  **Dallen Hatton**: // TODO: Add tasks here  
-  **Hayden Lenca**: // TODO: Add tasks here  
-  **Erin Keller**: // TODO: Add tasks here  
-  **Samuel Joseph**: // TODO: Add tasks here  
+  **Adrena Lewis**: Dashboard, Venues 
+  **Dallen Hatton**: Countdown 
+  **Hayden Lenca**: Budget Tracker 
+  **Erin Keller**: Authentication, Dashboard, Inspiration
+  **Samuel Joseph**: Vendors
 
   ## Outside Resources
 
