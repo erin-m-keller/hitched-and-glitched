@@ -199,6 +199,11 @@ p,
 .search-now-content h2 {
   margin-bottom: 1em;
 }
+#map {
+  width: 98vw; 
+  height: 400px; 
+  border: 1px solid #ccc; 
+}
 @media (max-width: 768px) {
   .inspiration-item {
     flex: 0 0 calc(50% - 16px);

@@ -39,7 +39,7 @@ const typeDefs = gql`
     password: String!
   }
   type Auth {
-    token: ID!
+    token: String!
     user: User!
   }  
 
@@ -47,7 +47,7 @@ const typeDefs = gql`
     getUser: User
   }
   type Mutation {
-    createUser(loginData:CreateUserInput!): Auth
+    createUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addInspiration(inspirationData: NewInspirationInput!): User!
     removeInspiration(inspirationId: String!): User!
