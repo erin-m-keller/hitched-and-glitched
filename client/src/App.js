@@ -42,19 +42,13 @@ function App() {
           <Navbar />
           {/* Define routes for the application using React Router */}
           <Switch>
-            {/* Route for the Home page */}
             <Route exact path='/' component={Home} />
-            {/* Route for the Budget page */}
             <Route exact path='/budget' component={Budget} />
-            {/* Route for the Dashboard page */}
             <Route exact path='/dashboard' component={Dashboard} />
-            <Route exact path='/venue' component={Venue}/>
+            <Route exact path='/venues' component={Venue}/>
             <Route exact path='/vendors' component={Vendors} />
-            {/* Route for the Inspiration page */}
             <Route exact path='/inspiration' component={Inspiration} />
-            {/* Route for countdown page*/}
             <Route exact path='/countdown' component={Countdown} />
-            {/* If no matching route is found, render this */}
             <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
           </Switch>
         </>

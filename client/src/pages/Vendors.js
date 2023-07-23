@@ -1,76 +1,80 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Layout, Menu, InputNumber } from 'antd';
-// const { Client } = require("@googlemaps/google-maps-services-js");
 
 const { Sider, Content } = Layout;
 
 let typeMenu = {
-	key: `1`,
+	key: `type`,
 	label: `Type`,
 	children: [
 		{
-			key: `1`,
+			key: `all`,
 			label: `All`,
 		},
 		{
-			key: `2`,
+			key: `food`,
 			label: `Food`,
 		},
 		{
-			key: `3`,
+			key: `floral`,
 			label: `Floral`,
 		}
 	]
 };
 let sortMenu = {
-	key: `2`,
+	key: `sort`,
 	label: `Sort by`,
 	children: [
 		{
-			key: `1`,
+			key: `relevance`,
 			label: `Relevance`,
 		},
 		{
-			key: `2`,
+			key: `pricehigh`,
 			label: `Price (high)`,
 		},
 		{
-			key: `3`,
+			key: `pricelow`,
 			label: `Price (low)`,
 		},
 		{
-			key: `4`,
+			key: `reviewshigh`,
 			label: `Reviews (high)`,
 		},
 		{
-			key: `5`,
+			key: `reviewslow`,
 			label: `Reviews (low)`,
 		}
 	]
 };
 
-const onChange = (value) => {
-	console.log('changed', value);
-};
-
 const Vendors = () => {
-	const googleMapsApiKey = "AIzaSyAuoc5IMttQ0EzKiOjOVOMmbwx4MZBkYTM";
-	const script = document.createElement('script');
-	script.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&libraries=places&callback=initMap`;
-	script.async = true;
+	const googleMapsApiKey = process.env.REACT_APP_GOOGLE_KEY; 
+	let map;
 
-	window.initMap = function () {
-		const map = new google.maps.Map(document.getElementById("map"), {
+	const handleLocationError = (browserHasGeolocation, infoWindow, pos) => {
+		infoWindow.setPosition(pos);
+		infoWindow.setContent(
+		  browserHasGeolocation
+			? "Error: The Geolocation service failed."
+			: "Error: Your browser doesn't support geolocation."
+		);
+		infoWindow.open(map);
+	};
+
+	const initMap = function () {
+		map = new window.google.maps.Map(document.getElementById("map"), {
 		  center: { lat: 37.7749, lng: -122.4194 },
 		  zoom: 8,
 		});
-		const infoWindow = new google.maps.InfoWindow();
-		const locationButton = document.createElement("button");
+		const infoWindow = new window.google.maps.InfoWindow(),
+			  locationButton = document.createElement("button");
 		locationButton.textContent = "Pan to Current Location";
 		locationButton.classList.add("custom-map-control-button");
-		map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+		map.controls[window.google.maps.ControlPosition.TOP_CENTER].push(
+		  locationButton
+		);
 		locationButton.addEventListener("click", () => {
-	  
 		  if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(
 			  (position) => {
@@ -81,7 +85,7 @@ const Vendors = () => {
 				infoWindow.setPosition(pos);
 				infoWindow.setContent("Location found.");
 				infoWindow.open(map);
-				console.log(pos)
+				console.log(pos);
 				map.setCenter(pos);
 			  },
 			  () => {
@@ -89,11 +93,22 @@ const Vendors = () => {
 			  }
 			);
 		  } else {
-	  
 			handleLocationError(false, infoWindow, map.getCenter());
 		  }
 		});
-	  };
+	};
+
+	const onChange = (value) => {
+		console.log(value);
+	};
+
+	useEffect(() => {
+		const script = document.createElement("script");
+		script.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&callback=initMap`;
+		script.async = true;
+		document.body.appendChild(script);
+		window.initMap = initMap;
+	}, []);
 
 	return (
 		<>

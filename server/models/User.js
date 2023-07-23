@@ -1,7 +1,6 @@
 // initialize variables
 const { Schema, model } = require('mongoose'),
-// import schema from Place.js
-const placeSchema = require('./places'),
+      placeSchema = require('./places'),
       bcrypt = require('bcrypt'),
       inspirationSchema = require('./Inspiration');
 // define the userSchema

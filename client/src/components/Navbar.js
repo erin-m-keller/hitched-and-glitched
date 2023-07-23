@@ -39,46 +39,64 @@ const AppNavbar = () => {
   };
 
   const menuItems = [
-      {
-        key: "1",
-        className: "unclickable-item",
-        icon: <FontAwesomeIcon icon={faBell} />,
-        label:"Hitched & Glitched"
-      },
-      {
-        key: "/",
-        icon: <FontAwesomeIcon icon={faHouse} />,
-        label: <Link to="/" className="navigation-link">Home</Link>,
-        className: isMenuItemActive("/") ? 'active' : 'inactive'
-      },
-      {
-        key: "/dashboard",
-        icon: <FontAwesomeIcon icon={faTachometerAlt} />,
-        label: <Link to="/dashboard" className="navigation-link">Dashboard</Link>,
-        className: isMenuItemActive("/dashboard") ? 'active' : 'inactive'
-      },
-      {
-        key: "/inspiration",
-        icon: <FontAwesomeIcon icon={faLightbulb} />,
-        label: <Link to="/inspiration" className="navigation-link">Inspiration</Link>,
-        className: isMenuItemActive("/inspiration") ? 'active' : 'inactive'
-      },
-      {
-        key: "/budget",
-        icon: <FontAwesomeIcon icon={faTachometerAlt} />,
-        label: <Link to="/budget" className="navigation-link">Budget</Link>,
-        className: isMenuItemActive("/budget") ? 'active' : 'inactive'
-      },
       ...(Auth.loggedIn()
       ? [
-          {
-            key: '/logout',
-            icon: <FontAwesomeIcon icon={faRightFromBracket} />,
-            label: 'Logout',
-            onClick: Auth.logout,
-          },
+        {
+          key: "/dashboard",
+          icon: <FontAwesomeIcon icon={faTachometerAlt} />,
+          label: <Link to="/dashboard" className="navigation-link">Dashboard</Link>,
+          className: isMenuItemActive("/dashboard") ? 'active' : 'inactive'
+        },
+        {
+          key: "/inspiration",
+          icon: <FontAwesomeIcon icon={faLightbulb} />,
+          label: <Link to="/inspiration" className="navigation-link">Inspiration</Link>,
+          className: isMenuItemActive("/inspiration") ? 'active' : 'inactive'
+        },
+        {
+          key: "/budget",
+          icon: <FontAwesomeIcon icon={faTachometerAlt} />,
+          label: <Link to="/budget" className="navigation-link">Budget</Link>,
+          className: isMenuItemActive("/budget") ? 'active' : 'inactive'
+        },
+        {
+          key: "/vendors",
+          icon: <FontAwesomeIcon icon={faTachometerAlt} />,
+          label: <Link to="/vendors" className="navigation-link">Vendors</Link>,
+          className: isMenuItemActive("/vendors") ? 'active' : 'inactive'
+        },
+        {
+          key: "/venues",
+          icon: <FontAwesomeIcon icon={faTachometerAlt} />,
+          label: <Link to="/venues" className="navigation-link">Venues</Link>,
+          className: isMenuItemActive("/venues") ? 'active' : 'inactive'
+        },
+        {
+          key: "/countdown",
+          icon: <FontAwesomeIcon icon={faTachometerAlt} />,
+          label: <Link to="/countdown" className="navigation-link">Countdown</Link>,
+          className: isMenuItemActive("/countdown") ? 'active' : 'inactive'
+        },
+        {
+          key: '/logout',
+          icon: <FontAwesomeIcon icon={faRightFromBracket} />,
+          label: 'Logout',
+          onClick: Auth.logout,
+        },
         ]
       : [
+          {
+            key: "1",
+            className: "unclickable-item",
+            icon: <FontAwesomeIcon icon={faBell} />,
+            label:"Hitched & Glitched"
+          },
+          {
+            key: "/",
+            icon: <FontAwesomeIcon icon={faHouse} />,
+            label: <Link to="/" className="navigation-link">Home</Link>,
+            className: isMenuItemActive("/") ? 'active' : 'inactive'
+          },
           {
             key: '/login',
             icon: <FontAwesomeIcon icon={faRightFromBracket} />,
@@ -87,8 +105,6 @@ const AppNavbar = () => {
           },
         ]),
   ];
-    
-  //<Menu items={menuItems} />
   
   return (
     <>
