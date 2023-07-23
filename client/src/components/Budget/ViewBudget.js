@@ -5,7 +5,7 @@ import { Button } from 'antd';
 const ViewBudget = (props) => {
 	return (
 		<>
-			<span className='budgetDisplay'>Budget: ${props.budget}
+			<span className='budgetDisplay text-gradient'>Budget: ${props.budget}
 			<Button className='aliceBlueText' type='text' onClick={props.handleEditClick}>
 				Edit
 			</Button>

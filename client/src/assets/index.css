@@ -214,7 +214,7 @@ p,
     flex: 0 0 100%;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1190px) {
   .hide-mobile {
     display: block;
   }
@@ -256,6 +256,9 @@ p,
   color: var(--salmon);
 }
 :where(.css-dev-only-do-not-override-1m62vyb).ant-btn-primary {
+  background-color: var(--salmon);
+}
+:where(.css-dev-only-do-not-override-1m62vyb).ant-menu-dark.ant-menu-horizontal >.ant-menu-item-selected {
   background-color: var(--salmon);
 }
 @keyframes gradient {

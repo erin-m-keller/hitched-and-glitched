@@ -20,7 +20,7 @@ const Budget = () => {
       <div className='darkGreen'>
         {/* bootstrap  "inlineBorder"*/}
         <div className='hero budgetSection'>
-          <h1 className='marginTop'>Budget Board</h1>
+          <h1 className='marginTop text-gradient'>Budget Board</h1>
           {/* bootstrap  'col-sm'*/}
           <div>
             <Starting />

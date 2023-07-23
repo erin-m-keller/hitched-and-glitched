@@ -80,31 +80,38 @@ const Countdown = () => {
 
   return (
     <>
-        <Space direction="vertical">
-            <DatePicker
-                onChange={handleOnChange}
-                id="dateInput"
+        <div className="hero">
+            <h1 className="text-gradient">Countdown</h1>
+            <h3 className="text-gradient">&ldquo;“I’m already feeling so excited. Just a few days to go for my big day. Keep calm!&rdquo;</h3>
+        </div>
+        <div style={{padding:"1em"}}>
+            <Space direction="vertical">
+                <DatePicker
+                    onChange={handleOnChange}
+                    id="dateInput"
+                    style={{
+                        width: '300px', // Adjust the width to your preference
+                        height: '40px', // Adjust the height to your preference
+                        fontSize: '1.5rem', // Adjust the font size to your preference
+                    }}
+                />
+            </Space>
+            <p><strong>Select a date to start your countdown!</strong></p>
+            <div
+                id="countdown-timer"
                 style={{
-                    width: '300px', // Adjust the width to your preference
-                    height: '40px', // Adjust the height to your preference
-                    fontSize: '1.5rem', // Adjust the font size to your preference
+                    fontFamily: 'Arial, sans-serif',
+                    fontSize: '5rem', // Increase the font size to make it bigger
+                    fontWeight: 'bold',
+                    color: '#FE7B72', // Customize the color to your preference
+                    margin: '2rem 0', // Add more margin to the top to move it down
+                    display: 'flex',
+                    justifyContent: 'center', // Center the content horizontally
+                    alignItems: 'center', // Center the content vertically
                 }}
-            />
-        </Space>
-        <div
-            id="countdown-timer"
-            style={{
-                fontFamily: 'Arial, sans-serif',
-                fontSize: '5rem', // Increase the font size to make it bigger
-                fontWeight: 'bold',
-                color: '#FE7B72', // Customize the color to your preference
-                margin: '2rem 0', // Add more margin to the top to move it down
-                display: 'flex',
-                justifyContent: 'center', // Center the content horizontally
-                alignItems: 'center', // Center the content vertically
-            }}
-        >
-            {countdownText}
+            >
+                {countdownText}
+            </div>
         </div>
     </>
 );
