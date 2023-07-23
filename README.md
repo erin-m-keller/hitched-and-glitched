@@ -35,7 +35,8 @@
   ```md
   AS A newly engaged couple
   I WANT a modern and user-friendly wedding website
-  SO THAT I can easily save wedding inspirations, manage my budget, have a countdown to the big day, and efficiently search for venues and vendors.
+  SO THAT I can easily save wedding inspirations, manage my budget,  
+  have a countdown to the big day, and efficiently search for venues and vendors.
   ```
   
   ## Installation 
@@ -84,10 +85,10 @@
 
   ## The Team Tasks 
 
-  **Adrena Lewis**: Dashboard, Venues 
-  **Dallen Hatton**: Countdown 
-  **Hayden Lenca**: Budget Tracker 
-  **Erin Keller**: Authentication, Dashboard, Inspiration
+  **Adrena Lewis**: Dashboard, Venues  
+  **Dallen Hatton**: Countdown  
+  **Hayden Lenca**: Budget Tracker  
+  **Erin Keller**: Authentication, Dashboard, Inspiration  
   **Samuel Joseph**: Vendors
 
   ## Outside Resources
