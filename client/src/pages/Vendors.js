@@ -114,7 +114,8 @@ const Vendors = () => {
 		<>
 			<div className="hero">
 				<h1 className="text-gradient sublogo">Vendors</h1>
-				<h3 className="text-gradient">&ldquo;With their expert touch, they transform weddings into timeless love stories, making dreams come true, one celebration at a time.&rdquo;</h3>
+            	<img src="robot.png" width="200px" alt="Robot wearing a veil"></img>
+				<h3 className="text-gradient description">&ldquo;With their e-e-expert touch, they transform weddings into timeless love stories, ma-ma-making dreams come true, one celebration at a time!&rdquo;</h3>
 			</div>
 			<Layout className="main-content">
 				<Sider className="sidebar">

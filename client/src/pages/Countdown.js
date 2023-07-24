@@ -95,23 +95,26 @@ const Countdown = () => {
     <>
         <div className="hero">
             <h1 className="text-gradient sublogo">Countdown</h1>
-            <h3 className="text-gradient">&ldquo;I’m already feeling so excited. Just a few days to go for my big day. Keep calm!&rdquo;</h3>
+            <img src="robot.png" width="200px" alt="Robot wearing a veil"></img>
+            <h3 className="text-gradient description">&ldquo;Are you r-really excited?? Just a few days to go for your b-b-big day. Keep calm!&rdquo;</h3>
         </div>
         <div style={{padding:"1em"}}>
-            <p><strong>Select a date to start your countdown!</strong></p>
-            <Space direction="vertical">
-                <DatePicker
-                    onChange={handleOnChange}
-                    id="dateInput"
-                    disabledDate={disabledDate}
-                    style={{
-                        width: '300px', // Adjust the width to your preference
-                        height: '40px', // Adjust the height to your preference
-                        fontSize: '1.5rem', // Adjust the font size to your preference
-                    }}
-                />
-            </Space>
-            <div id="countdown-banner"></div>
+            <div style={{textAlign:"center"}}>
+              <p><strong>Select a date to start your countdown!</strong></p>
+              <Space direction="vertical">
+                  <DatePicker
+                      onChange={handleOnChange}
+                      id="dateInput"
+                      disabledDate={disabledDate}
+                      style={{
+                          width: '300px', // Adjust the width to your preference
+                          height: '40px', // Adjust the height to your preference
+                          fontSize: '1.5rem', // Adjust the font size to your preference
+                      }}
+                  />
+              </Space>
+            </div>
+            <div id="countdown-banner" style={{textAlign:"center",padding:"1em"}}></div>
             <div
                 id="countdown-timer"
                 style={{
