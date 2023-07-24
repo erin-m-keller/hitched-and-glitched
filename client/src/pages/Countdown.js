@@ -1,68 +1,68 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { DatePicker, Space } from 'antd';
+import weddingCountdown from "../assets/images/wedding-countdown.jpg";
+import moment from 'moment';
 
 const Countdown = () => {
     const [countdownText, setCountdownText] = useState('');
-
-    // Define target and countdown variables with default values
-    let target = null;
-    let days = 0;
-    let hours = 0;
-    let minutes = 0;
-    let seconds = 0;
+    const [countdownIntervalId, setCountdownIntervalId] = useState(null);
+    const [targetDate, setTargetDate] = useState(null);
 
     // Function to validate the date format (YYYY-MM-DD)
     const isValidDate = (dateString) => {
-        var regEx = /^\d{4}-\d{2}-\d{2}$/;
+        let regEx = /^\d{4}-\d{2}-\d{2}$/;
         if (!dateString.match(regEx)) return false; // Invalid format
-        var d = new Date(dateString);
-        var dNum = d.getTime();
+        let d = new Date(dateString);
+        let dNum = d.getTime();
         if (!dNum && dNum !== 0) return false; // NaN value, invalid date
         return d.toISOString().slice(0, 10) === dateString;
     }
 
     // Function to initiate the countdown
     const countdownTimer = (formattedDate) => {
-        target = formattedDate; // Update the target date
-
-        if (!isValidDate(target)) {
-            console.log("Invalid date format. Please try again.");
-            return;
+        if (!isValidDate(formattedDate)) {
+          console.log('Invalid date format. Please try again.');
+          return;
         }
-
-        var today = new Date().getTime();
-        target = new Date(target).getTime();
-
+    
+        let today = new Date().getTime();
+        let target = new Date(formattedDate).getTime();
+    
         if (today > target) {
-            console.log("Invalid date. The target date has already passed.");
-            return;
+          console.log('Invalid date. The target date has already passed.');
+          return;
         }
-
+    
+        if (countdownIntervalId) {
+          clearInterval(countdownIntervalId);
+        }
+    
+        setTargetDate(target);
+    
         // Create and append the image element
-        var img = document.createElement("img");
-        img.src = "../../images-for-H&G/wedding-countdown.jpg";
-        img.alt = "Wedding Countdown";
-
-        var timer = document.getElementById("countdown-timer");
-        timer.appendChild(img);
-
-        var countdownInterval = setInterval(function() {
-            var now = new Date().getTime();
-            var distance = target - now;
-
-            days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            if (distance <= 0) {
-                clearInterval(countdownInterval);
-                setCountdownText("Countdown completed!");
-            } else {
-                setCountdownText(`Time remaining: ${days}d ${hours}h ${minutes}m ${seconds}s`);
-            }
+        let banner = document.getElementById('countdown-banner');
+        banner.innerHTML = '<img src="' + weddingCountdown + '" alt="Wedding Countdown">';
+    
+        let countdownInterval = setInterval(function () {
+          let now = new Date().getTime();
+          let distance = target - now;
+    
+          let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+          if (distance <= 0) {
+            clearInterval(countdownInterval);
+            setCountdownIntervalId(null); // Reset interval ID when countdown is completed
+            setCountdownText('Countdown completed!');
+          } else {
+            setCountdownText(`Time remaining: ${days}d ${hours}h ${minutes}m ${seconds}s`);
+          }
         }, 1000);
-    }
+    
+        setCountdownIntervalId(countdownInterval); // Store the interval ID in the state variable
+      };
 
     const formatDateToYYYYMMDD = (date) => {
         const year = date.getFullYear();
@@ -78,6 +78,19 @@ const Countdown = () => {
       countdownTimer(formattedDate);
   }
 
+  const disabledDate = (current) => {
+    return current && current < moment().endOf('day');
+  }
+
+  useEffect(() => {
+    // Clear the interval when the component unmounts
+    return () => {
+      if (countdownIntervalId) {
+        clearInterval(countdownIntervalId);
+      }
+    };
+  }, [countdownIntervalId]);
+
   return (
     <>
         <div className="hero">
@@ -90,6 +103,7 @@ const Countdown = () => {
                 <DatePicker
                     onChange={handleOnChange}
                     id="dateInput"
+                    disabledDate={disabledDate}
                     style={{
                         width: '300px', // Adjust the width to your preference
                         height: '40px', // Adjust the height to your preference
@@ -97,6 +111,7 @@ const Countdown = () => {
                     }}
                 />
             </Space>
+            <div id="countdown-banner"></div>
             <div
                 id="countdown-timer"
                 style={{

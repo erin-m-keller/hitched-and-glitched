@@ -51,6 +51,10 @@
   ```bash
     npm i 
   ```
+  * Create .env file in the ROOT folder, and add MongoDB Atlas Database connection URL.
+  ```bash
+    MONGODB_URI="value goes here"
+  ```
   * Create .env file in the server folder, and add a unique value to the SECRET key.
   ```bash
     SECRET="value goes here"
