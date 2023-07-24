@@ -121,41 +121,29 @@ const Dashboard = () => {
         </div>
         <div className="flex-container">
         <div className="dashDirect-light">
-          <a href="/lightBulb">
-            <img src={lightBulb} alt="Light" className="img-300x300"  />
-          </a>
-          <button className="light" onClick={goToInspire}>
+       <button className="light" onClick={goToInspire}>
             <img src={lightBulb} alt="Light" className="img-300x300" />
           </button>
         </div>
         <div className="dashDirect-count">
-          <a href="/dDay">
-            <img src={dDay} alt="Count" className="img-300x300" />
-          </a>
+        
           <button className="dooms" onClick={goToCountdown}>
             <img src={dDay} alt="DoomsDay"className="img-300x300"  />
           </button>
         </div>
         <div className="dashDirect-funds">
-          <a href="/piggyBank">
-            <img src={piggyBank} alt="Funds" className="img-300x300" />
-          </a>
+          
           <button className="piggy" onClick={goToBudget}>
             <img src={piggyBank} alt="Budget" className="img-300x300" />
           </button>
         </div>
         <div className="dashDirect-food">
-          <a href="/food">
-            <img src={food} alt="Food" className="img-300x300" />
-          </a>
           <button className="food" onClick={goToVender}>
             <img src={food} alt="Food" className="img-300x300"  />
           </button>
         </div>
         <div className="dashDirect-venue">
-          <a href="/alter">
-            <img src={alter} alt="Venue" className="img-300x300"  />
-          </a>
+          
           <button className="alter" onClick={goToVenue}>
             <img src={alter} alt="Alter " className="img-300x300" />
           </button>
