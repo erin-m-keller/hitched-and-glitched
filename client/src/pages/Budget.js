@@ -22,7 +22,7 @@ const Budget = () => {
         <div className='hero'>
           <h1 className='marginTop text-gradient sublogo'>Budget Board</h1>
           <img src="robot.png" width="200px" alt="Robot wearing a veil"></img>
-          <h3 className="text-gradient description">&ldquo;Are you r-really excited?? Just a few days to go for your b-b-big day. Keep calm!&rdquo;</h3>
+          <h3 className="text-gradient description">&ldquo;Important r-r-reminder! The point of getting m-m-married isn't to impress anyone.&rdquo;</h3>
           <div className='budgetSection'>
             {/* bootstrap  'col-sm'*/}
             <div>
