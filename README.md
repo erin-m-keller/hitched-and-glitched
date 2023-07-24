@@ -10,6 +10,7 @@
   * [Technology Stack](#technology-stack)
   * [User Story](#user-story)
   * [Installation](#installation)
+  * [Heroku Deployment](#heroku-deployment)
   * [Screenshot](#screenshot)
   * [Deployed Page](#deployed-page)
   * [The Team](#the-team)
@@ -70,6 +71,10 @@
   ```
   > Application is available at: http://localhost:3000/  
   > GraphQL is available at: http://localhost:3001/graphql
+
+  ## Heroku Deployment
+
+  Follow the deployment instructions found [here](https://gist.github.com/erin-m-keller/dc64052000e99eff9c6c91796b011027).
 
   ## Screenshot
   
