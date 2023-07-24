@@ -4,7 +4,7 @@
 
   ![mascot](./client/public/robot.png)  
   
-  Hitched & Glitched is a wedding planning website designed to assist couples in organizing and managing their perfect weddings. Built using the MERN stack (MongoDB, Express.js, React.js, and Node.js) along with GraphQL and Apollo, our website offers a modern and efficient solution.
+  Welcome to Hitched & Glitched, your go-to wedding planning website that ensures your dream wedding becomes a seamless reality. Our platform is meticulously crafted using the cutting-edge MERN stack (MongoDB, Express.js, React.js, and Node.js), alongside GraphQL and Apollo, to provide you with a contemporary and streamlined wedding planning experience. As a Progressive Web App (PWA), Hitched & Glitched delivers unmatched convenience, allowing you to plan and manage your perfect wedding effortlessly.
   
   ## Table of Contents
   * [Technology Stack](#technology-stack)
@@ -30,6 +30,7 @@
 ![antd](https://img.shields.io/badge/-AntDesign-61DAFB?color=violet&style=flat)
 ![graphql](https://img.shields.io/badge/-GraphQL-61DAFB?color=red&style=flat)
 ![apollo](https://img.shields.io/badge/-Apollo-61DAFB?color=orange&style=flat)
+![pwa](https://img.shields.io/badge/-PWA-61DAFB?color=yellow&style=flat)
 
   ## User Story
 
