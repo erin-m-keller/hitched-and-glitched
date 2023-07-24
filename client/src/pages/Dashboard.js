@@ -115,42 +115,42 @@ const Dashboard = () => {
       <div className="flex-container">
         <div className="dashDirect-light">
           <a href="/lightBulb">
-            <img src="../lightBulb.jpg" alt="Light" />
+            <img src={lightBulb} alt="Light" className="img-300x300"  />
           </a>
           <button className="light" onClick={goToInspire}>
-            <img src={lightBulb}alt="Light" />
+            <img src={lightBulb} alt="Light" className="img-300x300" />
           </button>
         </div>
         <div className="dashDirect-count">
           <a href="/dDay">
-            <img src="../dDay.jpg" alt="Count" />
+            <img src={dDay} alt="Count" className="img-300x300" />
           </a>
           <button className="dooms" onClick={goToCountdown}>
-            <img src="../dDay.jpg" alt="DoomsDay" />
+            <img src={dDay} alt="DoomsDay"className="img-300x300"  />
           </button>
         </div>
         <div className="dashDirect-funds">
           <a href="/piggyBank">
-            <img src="../piggyBank.jpg" alt="Funds" />
+            <img src={piggyBank} alt="Funds" className="img-300x300" />
           </a>
           <button className="piggy" onClick={goToBudget}>
-            <img src="../piggyBank.jpg" alt="Budget" />
+            <img src={piggyBank} alt="Budget" className="img-300x300" />
           </button>
         </div>
         <div className="dashDirect-food">
           <a href="/food">
-            <img src="../food.jpg" alt="Food" />
+            <img src={food} alt="Food" className="img-300x300" />
           </a>
           <button className="food" onClick={goToVender}>
-            <img src="../food.jpg" alt="Food" />
+            <img src={food} alt="Food" className="img-300x300"  />
           </button>
         </div>
         <div className="dashDirect-venue">
           <a href="/alter">
-            <img src="../alter.jpg" alt="Venue" />
+            <img src={alter} alt="Venue" className="img-300x300"  />
           </a>
           <button className="alter" onClick={goToVenue}>
-            <img src="../alter.jpg" alt="Alter" />
+            <img src={alter} alt="Alter " className="img-300x300" />
           </button>
 ---------------------------------------------------------------------------------------------------------
 <div id="stars"></div>
