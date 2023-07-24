@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery, useMutation } from '@apollo/client';
-import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
+import { Jumbotron, Container, CardColumns, Card, Button } from 'antd';
 
 import { GET_ME } from '../utils/queries';
 import { REMOVE_Places } from '../utils/mutations';
@@ -36,14 +36,14 @@ const SavedPlaces = () => {
 
   return (
     <>
-      <Jumbotron fluid className='text-light bg-dark'>
-        <Container>
+      <div fluid className='text-light bg-dark'>
+        <div>
           <h1>Viewing saved Places!</h1>
-        </Container>
-      </Jumbotron>
-      <Container>
+        </div>
+      </div>
+      <div>
         {/* ... Existing code ... */}
-      </Container>
+      </div>
     </>
   );
 };
