@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Layout, Menu, InputNumber } from 'antd';
 
 const { Sider, Content } = Layout;
@@ -108,12 +108,15 @@ const Vendors = () => {
 		script.async = true;
 		document.body.appendChild(script);
 		window.initMap = initMap;
-	}, []);
+	});
 
 	return (
 		<>
+			<div className="hero">
+				<h1 className="text-gradient sublogo">Vendors</h1>
+				<h3 className="text-gradient">&ldquo;With their expert touch, they transform weddings into timeless love stories, making dreams come true, one celebration at a time.&rdquo;</h3>
+			</div>
 			<Layout className="main-content">
-				<h1>Vendors</h1>
 				<Sider className="sidebar">
 					<Menu mode="inline" defaultSelectedKeys={['1']} items={[typeMenu, sortMenu]} />
 					<InputNumber min={0} addonBefore="Min:" addonAfter="$" onChange={onChange} />

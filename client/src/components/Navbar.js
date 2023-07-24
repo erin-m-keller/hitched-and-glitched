@@ -54,22 +54,22 @@ const AppNavbar = () => {
       ...(Auth.loggedIn()
       ? [
         {
-          key: "/dashboard",
-          icon: <FontAwesomeIcon icon={faTachometerAlt} />,
-          label: <Link to="/dashboard" className="navigation-link">Dashboard</Link>,
-          className: isMenuItemActive("/dashboard") ? 'active' : 'inactive'
+          key: "/budget",
+          icon: <FontAwesomeIcon icon={faCoins} />,
+          label: <Link to="/budget" className="navigation-link">Budget</Link>,
+          className: isMenuItemActive("/budget") ? 'active' : 'inactive'
+        },
+        {
+          key: "/countdown",
+          icon: <FontAwesomeIcon icon={faStopwatch} />,
+          label: <Link to="/countdown" className="navigation-link">Countdown</Link>,
+          className: isMenuItemActive("/countdown") ? 'active' : 'inactive'
         },
         {
           key: "/inspiration",
           icon: <FontAwesomeIcon icon={faLightbulb} />,
           label: <Link to="/inspiration" className="navigation-link">Inspiration</Link>,
           className: isMenuItemActive("/inspiration") ? 'active' : 'inactive'
-        },
-        {
-          key: "/budget",
-          icon: <FontAwesomeIcon icon={faCoins} />,
-          label: <Link to="/budget" className="navigation-link">Budget</Link>,
-          className: isMenuItemActive("/budget") ? 'active' : 'inactive'
         },
         {
           key: "/vendors",
@@ -84,10 +84,10 @@ const AppNavbar = () => {
           className: isMenuItemActive("/venues") ? 'active' : 'inactive'
         },
         {
-          key: "/countdown",
-          icon: <FontAwesomeIcon icon={faStopwatch} />,
-          label: <Link to="/countdown" className="navigation-link">Countdown</Link>,
-          className: isMenuItemActive("/countdown") ? 'active' : 'inactive'
+          key: "/dashboard",
+          icon: <FontAwesomeIcon icon={faTachometerAlt} />,
+          label: <Link to="/dashboard" className="navigation-link">Dashboard</Link>,
+          className: isMenuItemActive("/dashboard") ? 'active' : 'inactive'
         },
         {
           key: '/logout',

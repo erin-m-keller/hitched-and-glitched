@@ -43,7 +43,7 @@ p,
   margin: 1em;
 }
 .homepage-card {
-  flex-basis: calc(25% - 20px);
+  flex-basis: calc(20% - 20px);
   padding: 20px;
   background-color: var(--salmon);
   position: relative;

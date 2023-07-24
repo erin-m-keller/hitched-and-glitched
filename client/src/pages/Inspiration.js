@@ -80,7 +80,7 @@ const Inspiration = () => {
   return (
     <>
       <div className="hero">
-        <h1 className="text-gradient">Inspiration</h1>
+        <h1 className="text-gradient sublogo">Inspiration</h1>
         <h3 className="text-gradient">&ldquo;Wedding inspiration is everywhere; in the colors of nature, the whispers of the wind, and the love that fills the air.&rdquo;</h3>
         <Search
           placeholder="input search text"
@@ -101,7 +101,7 @@ const Inspiration = () => {
                 <Card
                   hoverable
                   className="inspiration-item"
-                  actions={[<p className="salmon"><a href={item.urls.raw} target="_blank">View larger. <FontAwesomeIcon icon={faSquareUpRight} /></a></p>]}
+                  actions={[<p className="salmon"><a href={item.urls.raw} target="_blank" rel="noreferrer">View larger. <FontAwesomeIcon icon={faSquareUpRight} /></a></p>]}
                   style={{ width: 240 }}>
                     <Card type="inner" 
                       title={<small><FontAwesomeIcon icon={faHeart} />&nbsp;&nbsp;&nbsp;{item.likes === 1 ? `${item.likes} Like` : `${item.likes} Likes`}</small>} 
