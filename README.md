@@ -101,7 +101,7 @@
   **Adrena Lewis**: Dashboard, Venues  
   **Dallen Hatton**: Countdown  
   **Hayden Lenca**: Budget Tracker  
-  **Erin Keller**: Authentication, Dashboard, Inspiration  
+  **Erin Keller**: Authentication, Dashboard, Inspiration, PWA Setup  
   **Samuel Joseph**: Vendors
 
   ## Outside Resources
