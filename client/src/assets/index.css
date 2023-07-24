@@ -134,7 +134,7 @@ p,
   background-size: 400% 400%;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  background-clip: unset;
+  background-clip: text;
   animation: gradient 15s ease infinite;
   line-height: 1;
 }

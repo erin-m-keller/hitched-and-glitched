@@ -112,7 +112,14 @@ const Dashboard = () => {
 
   return (
     <div className="mainDash">
-      <div className="flex-container">
+    {Auth.loggedIn() ? (
+      <>
+        <div className="hero">
+          <h1 className="text-gradient sublogo">Dashboard</h1>
+          <img src="robot.png" width="200px" alt="Robot wearing a veil"></img>
+          <h3 className="text-gradient description">&ldquo;Beep, boop, and cheer, a wedding dashboard here, s-s-steering love's frontier, your wedding dreams p-p-premier.&rdquo;</h3>
+        </div>
+        <div className="flex-container">
         <div className="dashDirect-light">
           <a href="/lightBulb">
             <img src={lightBulb} alt="Light" className="img-300x300"  />
@@ -152,7 +159,6 @@ const Dashboard = () => {
           <button className="alter" onClick={goToVenue}>
             <img src={alter} alt="Alter " className="img-300x300" />
           </button>
----------------------------------------------------------------------------------------------------------
 <div id="stars"></div>
 <div id="stars2"></div>
 <div id="stars3"></div>
@@ -307,11 +313,6 @@ const Dashboard = () => {
       <img src="robot.png" width="200px" alt="Robot" />
 
       </div>
-    {Auth.loggedIn() ? (
-      <>
-        <div className="hero">
-          <h1 className="text-gradient">Dashboard</h1>
-        </div>
         <div className="container">
           <h1>Saved Inspiration</h1>
           {contextHolder}
