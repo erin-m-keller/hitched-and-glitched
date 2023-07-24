@@ -250,7 +250,8 @@ p,
 :where(.css-dev-only-do-not-override-14wwjjs).ant-menu-dark.ant-menu-horizontal >.ant-menu-item:hover,
 :where(.css-dev-only-do-not-override-1jr9qlj).ant-menu-dark.ant-menu-horizontal >.ant-menu-item-selected,
 :where(.css-dev-only-do-not-override-1jr9qlj).ant-menu-dark.ant-menu-horizontal >.ant-menu-item-selected:hover,
-:where(.css-txh9fw).ant-menu-dark.ant-menu-horizontal >.ant-menu-item-selected {
+:where(.css-txh9fw).ant-menu-dark.ant-menu-horizontal >.ant-menu-item-selected,
+:where(.css-txh9fw).ant-menu-dark.ant-menu-horizontal >.ant-menu-item-selected:hover {
   background-color: #ed685f;
   color: #000;
 }
