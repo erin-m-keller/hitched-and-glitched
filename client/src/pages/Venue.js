@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Input, Card, Button, CardColumns, Container, Jumbotron, Form, Col } from 'react-bootstrap';
+import { Input, Card, Button, CardColumns, Container, Jumbotron, Form, Col } from 'antd';
 
 
 const Venue = () => {
@@ -60,26 +60,31 @@ const Venue = () => {
     setSavedPlacesIds([...savedPlacesIds, PlacesId]);
   };
 
+  const getSavedPlacesIds = () => {
+    console.log("test");
+  }
+
   useEffect(() => {
     const savedIds = getSavedPlacesIds();
     if (savedIds) {
       setSavedPlacesIds(savedIds);
     }
-  }, []);
-
-  useEffect(() => {
-    savePlacesIds(savedPlacesIds);
   }, [savedPlacesIds]);
 
   return (
     <>
-      <Jumbotron fluid className='text-light bg-dark'>
-        <Container>
+    <div className="hero">
+        <h1 className="text-gradient sublogo">Venues</h1>
+        <img src="robot.png" width="200px" alt="Robot wearing a veil"></img>
+        <h3 className="text-gradient description">&ldquo;In circuits and code, wedding vendors s-s-spread love's abode.&rdquo;</h3>
+      </div>
+      <div fluid="true" className='text-light bg-dark'>
+        <div>
           <h1>Search for Places!</h1>
           <Form onSubmit={handleFormSubmit}>
-            <Form.Row>
-              <Col xs={12} md={8}>
-                <Form.Control
+            <div>
+              <div>
+                <Input
                   name='searchInput'
                   value={searchInput}
                   onChange={(e) => setSearchInput(e.target.value)}
@@ -87,34 +92,34 @@ const Venue = () => {
                   size='lg'
                   placeholder='Search for a Place'
                 />
-              </Col>
-              <Col xs={12} md={4}>
+              </div>
+              <div>
                 <Button type='submit' variant='success' size='lg'>
                   Submit Search
                 </Button>
-              </Col>
-            </Form.Row>
+              </div>
+            </div>
           </Form>
-        </Container>
-      </Jumbotron>
+        </div>
+      </div>
 
-      <Container>
+      <div>
         <h2>
           {searchedPlaces.length
             ? `Viewing ${searchedPlaces.length} results:`
             : 'Search for a Place to begin'}
         </h2>
-        <CardColumns>
+        <div>
           {searchedPlaces.map((place) => {
             return (
               <Card key={place.PlacesId} border='dark'>
                 {place.image ? (
-                  <Card.Img src={place.image} alt={`The image for ${place.location}`} variant='top' />
+                  <img src={place.image} alt={`The image for ${place.location}`} variant='top' />
                 ) : null}
-                <Card.Body>
-                  <Card.Title>{place.location}</Card.Title>
+                <div>
+                  <p>{place.location}</p>
                   <p className='small'>Contact: {place.contactNumber}</p>
-                  <Card.Text>{place.description}</Card.Text>
+                  <p>{place.description}</p>
                   <Button
                     disabled={savedPlacesIds.includes(place.PlacesId)}
                     className='btn-block btn-info'
@@ -124,12 +129,12 @@ const Venue = () => {
                       ? 'This Place has already been saved!'
                       : 'Save this Place!'}
                   </Button>
-                </Card.Body>
+                </div>
               </Card>
             );
           })}
-        </CardColumns>
-      </Container>
+        </div>
+      </div>
     </>
   );
 };
