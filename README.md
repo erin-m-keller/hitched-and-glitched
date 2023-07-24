@@ -60,6 +60,10 @@
     REACT_APP_UNSPLASH_SECRET = ""
     REACT_APP_GOOGLE_KEY = ""
   ```
+  * Build the application.
+  ```md
+    npm run build
+  ```
   * Start the application.
   ```md
     npm run start:dev
@@ -73,7 +77,7 @@
   
   ## Deployed page
 
-  [View Published Page](https://hitched-and-glitched-697b7a3de50f.herokuapp.com/ )
+  [View Published Page](https://hitched-and-glitched-697b7a3de50f.herokuapp.com/)
 
   ## The Team
 

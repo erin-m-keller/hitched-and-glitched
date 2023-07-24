@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { DatePicker, Space } from 'antd';
 
 const Countdown = () => {
@@ -81,10 +81,11 @@ const Countdown = () => {
   return (
     <>
         <div className="hero">
-            <h1 className="text-gradient">Countdown</h1>
-            <h3 className="text-gradient">&ldquo;“I’m already feeling so excited. Just a few days to go for my big day. Keep calm!&rdquo;</h3>
+            <h1 className="text-gradient sublogo">Countdown</h1>
+            <h3 className="text-gradient">&ldquo;I’m already feeling so excited. Just a few days to go for my big day. Keep calm!&rdquo;</h3>
         </div>
         <div style={{padding:"1em"}}>
+            <p><strong>Select a date to start your countdown!</strong></p>
             <Space direction="vertical">
                 <DatePicker
                     onChange={handleOnChange}
@@ -96,7 +97,6 @@ const Countdown = () => {
                     }}
                 />
             </Space>
-            <p><strong>Select a date to start your countdown!</strong></p>
             <div
                 id="countdown-timer"
                 style={{
