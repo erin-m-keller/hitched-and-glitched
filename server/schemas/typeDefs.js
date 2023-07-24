@@ -28,7 +28,6 @@ const typeDefs = gql`
   }
   type Place {
     location: String!
-    address: String!
     guestCapacity: Int!
     contactNumber: String!
     description: String!

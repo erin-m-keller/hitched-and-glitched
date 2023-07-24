@@ -134,6 +134,7 @@ p,
   background-size: 400% 400%;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  background-clip: unset;
   animation: gradient 15s ease infinite;
   line-height: 1;
 }
@@ -290,10 +291,6 @@ p,
   }
 }
 
-/* for the venue background */
-
-
-
 .budgetSection {
   display: flex;
   justify-content: center;
@@ -374,3 +371,108 @@ p,
   .salmonText {
     color: #FE7B72;
   }
+/* ----------------------------------dasboard fireflies--------------------------------------------------------------------------------- */
+
+.img-300x300 {
+  width: 300px;
+  height: 300px;
+}
+
+.mainDash {
+
+:root {
+    --ring-size: 200px;
+    --angle: -360deg;
+}
+
+body {
+    background: linear-gradient(to top, #4c234a, #0f1532);
+    color: #20e3a2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    transform-style: preserve-3d;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    z-index: 0;
+    transform-style: preserve-3d;
+}
+
+.particle::after {
+    content: "";
+    width: 4px;
+    position: absolute;
+    height: 4px;
+    background: yellow;
+    border-radius: 100%;
+}
+
+@keyframes birth#1 {
+    0% {
+        transform: rotateZ(0) rotateY(0) translateX(120px);
+    }
+    50% {
+        transform: rotateZ(0deg) rotateY(0deg) translateX(120px);
+    }
+    100% {
+        transform: rotateZ(0) rotateY(0) translateX(120px);
+    }
+}
+/* ... Keyframes for birth#2 through birth#100 go here ... */
+
+/* Stars */
+
+#stars {
+    width: 2px;
+    height: 2px;
+    box-shadow: 1183px 927px rgba(165, 190, 195, 0.1), 1190px 448px rgba(184, 174, 131, 0.3), /* ... more box-shadow values ... */;
+    background: transparent;
+    border-radius: 100%;
+    animation: blink 2s infinite;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#stars2 {
+    width: 3px;
+    height: 3px;
+    box-shadow: 1987px 303px rgba(165, 190, 195, 0.3), 1313px 1465px rgba(184, 174, 131, 0.9), /* ... more box-shadow values ... */;
+    background: transparent;
+    border-radius: 100%;
+    animation: blink 4s infinite;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#stars3 {
+    width: 4px;
+    height: 4px;
+    box-shadow: 828px 1756px rgba(165, 190, 195, 0.4), 1376px 1509px rgba(184, 174, 131, 0.5), /* ... more box-shadow values ... */;
+    background: transparent;
+    border-radius: 100%;
+    animation: blink 3s infinite;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+}

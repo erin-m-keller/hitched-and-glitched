@@ -1,4 +1,8 @@
+import alter from "../assets/images/alter.jpg";
+import dDay from "../assets/images/dDay.jpg";
+import food from "../assets/images/food.jpg";
 import lightBulb from "../assets/images/lightBulb.jpg";
+import piggyBank from "../assets/images/piggyBank.jpg";
 import React, { useEffect, useState } from 'react';
 import Auth from '../utils/auth';
 import { Card, Empty, notification } from 'antd';
@@ -111,46 +115,197 @@ const Dashboard = () => {
       <div className="flex-container">
         <div className="dashDirect-light">
           <a href="/lightBulb">
-            <img src="../lightBulb.jpeg" alt="Light" />
+            <img src={lightBulb} alt="Light" className="img-300x300"  />
           </a>
           <button className="light" onClick={goToInspire}>
-            <img src={lightBulb}alt="Light" />
+            <img src={lightBulb} alt="Light" className="img-300x300" />
           </button>
         </div>
         <div className="dashDirect-count">
-          <a href="/dDAy">
-            <img src="../dDay" alt="Count" />
+          <a href="/dDay">
+            <img src={dDay} alt="Count" className="img-300x300" />
           </a>
           <button className="dooms" onClick={goToCountdown}>
-            <img src="./images/dDay.jpg.jpg" alt="DoomsDay" />
+            <img src={dDay} alt="DoomsDay"className="img-300x300"  />
           </button>
         </div>
         <div className="dashDirect-funds">
           <a href="/piggyBank">
-            <img src="../piggyBAnk" alt="Funds" />
+            <img src={piggyBank} alt="Funds" className="img-300x300" />
           </a>
           <button className="piggy" onClick={goToBudget}>
-            <img src="./images/piggyBank.jpg" alt="Budget" />
+            <img src={piggyBank} alt="Budget" className="img-300x300" />
           </button>
         </div>
         <div className="dashDirect-food">
-          <a href="/cake">
-            <img src="../cake" alt="Food" />
+          <a href="/food">
+            <img src={food} alt="Food" className="img-300x300" />
           </a>
           <button className="food" onClick={goToVender}>
-            <img src="../images/food.jpg" alt="Food" />
+            <img src={food} alt="Food" className="img-300x300"  />
           </button>
         </div>
         <div className="dashDirect-venue">
           <a href="/alter">
-            <img src="../alter" alt="Venue" />
+            <img src={alter} alt="Venue" className="img-300x300"  />
           </a>
           <button className="alter" onClick={goToVenue}>
-            <img src="./images/alter.jpg" alt="Alter" />
+            <img src={alter} alt="Alter " className="img-300x300" />
           </button>
+---------------------------------------------------------------------------------------------------------
+<div id="stars"></div>
+<div id="stars2"></div>
+<div id="stars3"></div>
+
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
+<div class="particle">
+	<div class="inner"></div>
+</div>
         </div>
         <h1>The first s-s-step is always the hardest, there's no wrong p-p-p-lace to start!</h1>
       <img src="robot.png" width="200px" alt="Robot" />
+
       </div>
     {Auth.loggedIn() ? (
       <>

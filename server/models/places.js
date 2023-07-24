@@ -6,10 +6,6 @@ const placeSchema = new Schema(
       type: String,
       required: true,
     },
-    address: {
-      type: String,
-      required: true,
-    },
     guestCapacity: {
       type: Number,
       required: true,
