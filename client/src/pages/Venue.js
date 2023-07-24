@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Input, Card, Button, CardColumns, Container, Jumbotron, Form, Col } from 'react-bootstrap';
-// Import other necessary dependencies and components
+
 
 const Venue = () => {
   const [searchedPlaces, setSearchedPlaces] = useState([]);
   const [searchInput, setSearchInput] = useState('');
   const [savedPlacesIds, setSavedPlacesIds] = useState([]);
 
-  // Add your other state variables and functions here (e.g., the useMutation function)
-
-  // Function to handle form submission and search
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -18,10 +15,7 @@ const Venue = () => {
     }
 
     try {
-      // Implement your logic to fetch data from the API or local storage
-      // For example, using searchGooglePlaces(searchInput) as mentioned in the original code
-
-      // For demonstration purposes, let's assume you have data in the format below
+ 
       const response = {
         ok: true,
         data: [
@@ -32,7 +26,7 @@ const Venue = () => {
             contactNumber: 'Venue 1 phone number',
             image: 'venue1.png',
           },
-          // Add more data here
+
         ],
       };
 
@@ -57,19 +51,15 @@ const Venue = () => {
     }
   };
 
-  // Function to handle saving places to local storage or database using the useMutation function
   const handleSavePlaces = async (PlacesId) => {
-    // Implement the logic to save the place to local storage or database
-    // For demonstration purposes, let's assume you add the PlacesId to the savedPlacesIds state
 
     if (savedPlacesIds.includes(PlacesId)) {
-      return; // Place is already saved
+      return; 
     }
 
     setSavedPlacesIds([...savedPlacesIds, PlacesId]);
   };
 
-  // Load savedPlacesIds from local storage on component mount
   useEffect(() => {
     const savedIds = getSavedPlacesIds();
     if (savedIds) {
@@ -77,7 +67,6 @@ const Venue = () => {
     }
   }, []);
 
-  // Save updated savedPlacesIds to local storage when the state changes
   useEffect(() => {
     savePlacesIds(savedPlacesIds);
   }, [savedPlacesIds]);
