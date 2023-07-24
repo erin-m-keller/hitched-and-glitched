@@ -81,7 +81,8 @@ const Inspiration = () => {
     <>
       <div className="hero">
         <h1 className="text-gradient sublogo">Inspiration</h1>
-        <h3 className="text-gradient">&ldquo;Wedding inspiration is everywhere; in the colors of nature, the whispers of the wind, and the love that fills the air.&rdquo;</h3>
+        <img src="robot.png" width="200px" alt="Robot wearing a veil"></img>
+        <h3 className="text-gradient description">&ldquo;Wedding inspiration is e-e-everywhere; in the colors of nature, the whi-whispers of the wind, and the love that fills the air.&rdquo;</h3>
         <Search
           placeholder="input search text"
           allowClear

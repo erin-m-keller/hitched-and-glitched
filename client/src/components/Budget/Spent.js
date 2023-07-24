@@ -9,7 +9,7 @@ const Spent = () => {
 
     return (
         <div className='spent'>
-            <span className='spentDisplay text-gradient'>Spent: ${ totalExpenses }</span>
+            <span className='spentDisplay'>Spent: ${ totalExpenses }</span>
         </div>
     );
 };

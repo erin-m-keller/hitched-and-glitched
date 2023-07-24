@@ -19,19 +19,23 @@ const Budget = () => {
       {/* bootstrap  container budget*/}
       <div className='darkGreen'>
         {/* bootstrap  "inlineBorder"*/}
-        <div className='hero budgetSection'>
+        <div className='hero'>
           <h1 className='marginTop text-gradient sublogo'>Budget Board</h1>
-          {/* bootstrap  'col-sm'*/}
-          <div>
-            <Starting />
-          </div>
-          {/* bootstrap  'col-sm'*/}
-          <div className='margin'>
-            <Spent />
-          </div>
-          {/* bootstrap  'col-sm'*/}
-          <div>
-            <Remaining />
+          <img src="robot.png" width="200px" alt="Robot wearing a veil"></img>
+          <h3 className="text-gradient description">&ldquo;Are you r-really excited?? Just a few days to go for your b-b-big day. Keep calm!&rdquo;</h3>
+          <div className='budgetSection'>
+            {/* bootstrap  'col-sm'*/}
+            <div>
+              <Starting />
+            </div>
+            {/* bootstrap  'col-sm'*/}
+            <div className='margin'>
+              <Spent />
+            </div>
+            {/* bootstrap  'col-sm'*/}
+            <div>
+              <Remaining />
+            </div>
           </div>
         </div>
 
