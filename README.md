@@ -62,9 +62,9 @@
   ```
   * Create .env file in the client folder, and add api keys/secrets.
   ```bash
-    REACT_APP_UNSPLASH_KEY = ""
-    REACT_APP_UNSPLASH_SECRET = ""
-    REACT_APP_GOOGLE_KEY = ""
+    REACT_APP_UNSPLASH_KEY = "value goes here"
+    REACT_APP_UNSPLASH_SECRET = "value goes here"
+    REACT_APP_GOOGLE_KEY = "value goes here"
   ```
   * Build the application.
   ```md
